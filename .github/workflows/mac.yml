@@ -1,0 +1,29 @@
+name: macOS
+
+on: 
+  push:
+    branches: main
+    path-ignore:
+      - 'README.md'
+      - 'LICENSE'
+
+jobs:
+  macOS:
+    name: macOS
+    runs-on: macOS-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+              
+      - name: Install ShellCheck
+        run: sudo apt install -y shellcheck
+
+      - name: Run ShellCheck
+        run: shellcheck mac/setup.sh
+      
+      - name: Setup
+        run: |
+          cd mac
+          chmod +x setup.sh
+          sh setup.sh
