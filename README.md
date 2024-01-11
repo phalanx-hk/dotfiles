@@ -9,6 +9,6 @@ sh setup.sh
 
 ## ubunut
 ```bash
-cd mac
-sh setup.sh
+cd ubuntu/scripts
+/bin/bash setup.bash
 ```
