@@ -21,9 +21,6 @@ if [ -f '/Users/hirotoshi-kitamura/google-cloud-sdk/path.zsh.inc' ]; then . '/Us
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/hirotoshi-kitamura/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/hirotoshi-kitamura/google-cloud-sdk/completion.zsh.inc'; fi
 
-# CodeWhisperer post block. Keep at the bottom of this file.
-[[ -f "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.post.zsh"
-
 # starshipの設定
 eval "$(starship init zsh)"
 
@@ -51,3 +48,6 @@ alias ps='procs -tree'
 alias grep='rg'
 alias du='dust'
 alias top='btm'
+
+# CodeWhisperer post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.post.zsh"

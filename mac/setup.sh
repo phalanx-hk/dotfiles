@@ -10,6 +10,14 @@ if [ -z "$(command -v brew)" ]; then
     echo "--- Install Homebrew is Done!  ---"
 fi
 
+if [ -z "$(command -v cw)" ];then
+    echo "--- install codewhisper is start ---"
+    xh https://desktop-release.codewhisperer.us-east-1.amazonaws.com/latest/CodeWhisperer.dmg --download  --output /tmp/CodeWhisperer.dmg
+    hdiutil attach /tmp/CodeWhisperer.dmg
+    cp -r /Volumes/CodeWhisperer/CodeWhisperer.app /Applications/ 
+    echo "--- install codewhisper is done---"
+fi
+
 if [ -z "$(command -v poetry)" ];then
     echo "--- install poetry is start ---"
     curl -sSL https://install.python-poetry.org | python3 -
