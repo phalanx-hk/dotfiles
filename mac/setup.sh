@@ -37,4 +37,9 @@ ln -sf ~/dotfiles/mac/zsh/.zshrc ~/.zshrc
 mkdir -p ~/.config/sheldon
 ln -sf .~/dotfiles/mac/sheldon/sheldon.toml ~/.config/sheldon/sheldon.toml
 
+# gh
+mkdir -p ~/.config/gh
+ln -sf .~/dotfiles/mac/gh/config.yml ~/.config/sheldon/config.yml
+ln -sf .~/dotfiles/mac/gh/hosts.yml ~/.config/sheldon/hosts.yml
+
 echo "--- Link dotfiles is Done!  ---"

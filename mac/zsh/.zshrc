@@ -42,7 +42,7 @@ setopt AUTO_CD
 setopt AUTO_PARAM_KEYS
 
 alias cat='bat'
-alias ls='eza  --icons'
+alias ls='eza  --icons --long'
 alias find='fd'
 alias ps='procs -tree'
 alias grep='rg'
