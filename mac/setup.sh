@@ -20,12 +20,12 @@ echo "--- Link dotfiles is Start! ---"
 
 # starship
 mkdir -p ~/.config
-ln -sf ./starship/starship.toml ~/.config/starship.toml
+ln -sf ~/dotfiles/mac/starship/starship.toml ~/.config/starship.toml
 
 # zsh
-ln -sf ./zsh/.zshrc ~/.zshrc
+ln -sf ~/dotfiles/mac/zsh/.zshrc ~/.zshrc
 
 # sheldon
-ln -sf ./sheldon/sheldon.toml ~/.config/sheldon.toml
+ln -sf .~/dotfiles/mac/sheldon/sheldon.toml ~/.config/sheldon.toml
 
 echo "--- Link dotfiles is Done!  ---"
