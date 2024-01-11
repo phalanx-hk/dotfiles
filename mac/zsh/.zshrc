@@ -36,6 +36,12 @@ eval "$(pyenv init -)"
 # poetry
 export PATH="$PATH:$HOME/Library/Application\ Support/pypoetry/venv/bin"
 
+# goenv
+export GOENV_ROOT="$HOME/.goenv"
+eval "$(goenv init -)" 
+export PATH="$GOROOT/bin:$PATH"
+export PATH="$PATH:$GOPATH/bin"
+
 ## パスを直接入力してもcdする
 setopt AUTO_CD
 ## 環境変数を補完
