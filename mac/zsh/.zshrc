@@ -42,6 +42,9 @@ eval "$(goenv init -)"
 export PATH="$GOROOT/bin:$PATH"
 export PATH="$PATH:$GOPATH/bin"
 
+# rust(cargo)
+export PATH="$HOME/.cargo/bin:$PATH"
+
 ## パスを直接入力してもcdする
 setopt AUTO_CD
 ## 環境変数を補完

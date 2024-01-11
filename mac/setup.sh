@@ -10,6 +10,7 @@ if [ -z "$(command -v brew)" ]; then
     echo "--- Install Homebrew is Done!  ---"
 fi
 
+# codewhisperをインストール
 if [ -z "$(command -v cw)" ];then
     echo "--- install codewhisper is start ---"
     xh https://desktop-release.codewhisperer.us-east-1.amazonaws.com/latest/CodeWhisperer.dmg --download  --output /tmp/CodeWhisperer.dmg
@@ -18,11 +19,20 @@ if [ -z "$(command -v cw)" ];then
     echo "--- install codewhisper is done---"
 fi
 
+# poetryをインストール
 if [ -z "$(command -v poetry)" ];then
     echo "--- install poetry is start ---"
     curl -sSL https://install.python-poetry.org | python3 -
     echo "--- install poetry is done---"
 fi
+
+# rustインストール
+if [ -z "$(command -v rustup)" ];then
+    echo "--- install rustup is start ---"
+    rustup-init
+    echo "--- install rustup is done---"
+fi
+
 # dotfilesを配置
 echo "--- Link dotfiles is Start! ---"
 
