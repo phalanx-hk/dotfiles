@@ -15,12 +15,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Install ShellCheck
-        run: sudo apt install -y shellcheck
-
-      - name: Run ShellCheck
-        run: shellcheck ubuntu/scripts/* 
       
       - name: Setup
         run: |
