@@ -26,6 +26,7 @@ ln -sf ~/dotfiles/mac/starship/starship.toml ~/.config/starship.toml
 ln -sf ~/dotfiles/mac/zsh/.zshrc ~/.zshrc
 
 # sheldon
-ln -sf .~/dotfiles/mac/sheldon/sheldon.toml ~/.config/sheldon.toml
+mkdir -p ~/.config/sheldon
+ln -sf .~/dotfiles/mac/sheldon/sheldon.toml ~/.config/sheldon/sheldon.toml
 
 echo "--- Link dotfiles is Done!  ---"
