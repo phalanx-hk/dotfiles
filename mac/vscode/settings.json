@@ -1,0 +1,43 @@
+{
+  "autoDocstring.docstringFormat": "google",
+  "debug.console.fontSize": 16,
+  "editor.acceptSuggestionOnEnter": "off",
+  "editor.accessibilitySupport": "off",
+  "editor.bracketPairColorization.enabled": false,
+  "editor.codeActionsOnSave": {},
+  "editor.detectIndentation": true,
+  "editor.inlayHints.enabled": "onUnlessPressed",
+  "editor.inlineSuggest.enabled": true,
+  "editor.minimap.enabled": false,
+  "editor.tabCompletion": "on",
+  "editor.tabSize": 2,
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "git.openRepositoryInParentFolders": "never",
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": true,
+    "markdown": true,
+    "": "true",
+    "go": true,
+    "jsonc": true,
+    "rust": true,
+    "typescript": true,
+    "yaml": true,
+    "terraform": "true"
+  },
+  "html.format.wrapLineLength": 150,
+  "remote.SSH.configFile": "/Users/${USER}/.ssh/config",
+  "remote.SSH.useLocalServer": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "settingsSync.ignoredExtensions": [],
+  "terminal.integrated.enableMultiLinePasteWarning": false,
+  "workbench.colorTheme": "GitHub Dark Default",
+  "workbench.settings.useSplitJSON": false,
+  "workbench.startupEditor": "none",
+  "terminal.integrated.env.osx": {
+    "CW_NEW_SESSION": "1"
+  },
+  "git.enableSmartCommit": true,
+  "terminal.integrated.fontFamily": "Hack Nerd Font"
+}
