@@ -3,7 +3,7 @@ name: Ubuntu
 on: 
   push:
     branches: main
-    path-ignore:
+    paths-ignore:
       - 'README.md'
       - 'LICENSE'
 
