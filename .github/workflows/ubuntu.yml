@@ -24,7 +24,6 @@ jobs:
         run: |
           mkdir -p $HOME/.local/bin
           curl -sfL https://raw.githubusercontent.com/ducaale/xh/master/install.sh | faketty sh
-          xh get https://pyenv.run
       
       - name: Setup
         run: |
