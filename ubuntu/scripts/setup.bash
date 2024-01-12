@@ -9,6 +9,17 @@ echo "--- apt install is start! ---"
 sudo /bin/sh "$CUR_DIR/apt.sh"
 echo "--- apt install is done! ---"
 
+# rust
+if ! command -v "rustup" >/dev/null 2>&1; then
+	echo "--- install rust is start! ---"
+	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+	# shellcheck disable=SC1091
+	source "$HOME/.cargo/env"
+	echo "--- install rust is done! ---"
+else
+	echo "--- rust is installed! ---"
+fi
+
 # xh client
 if ! command -v "xh" >/dev/null 2>&1; then
 	echo "--- install xh is start! ---"
@@ -46,21 +57,10 @@ else
 	echo "--- poetry is installed! ---"
 fi
 
-# rust
-if ! command -v "rustup" >/dev/null 2>&1; then
-	echo "--- install rust is start! ---"
-	xh https://sh.rustup.rs --https --ssl tls1.2 | sh
-	# shellcheck disable=SC1091
-	source "$HOME/.cargo/env"
-	echo "--- install rust is done! ---"
-else
-	echo "--- rust is installed! ---"
-fi
-
 # starship
 if ! command -v "starship" >/dev/null 2>&1; then
 	echo "--- install starship is start! ---"
-	xh https://starship.rs/install.sh | sh
+	xh https://starship.rs/install.sh | sh -s -- -y
 	echo "--- install starship is done! ---"
 else
 	echo "--- starship is installed! ---"

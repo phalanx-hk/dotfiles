@@ -15,6 +15,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Setup faketty
+        uses: Yuri6037/Action-FakeTTY@v1.1
+      
+      - name: Install xh
+        run: curl -sfL https://raw.githubusercontent.com/ducaale/xh/master/install.sh | faketty sh
       
       - name: Setup
         run: |
