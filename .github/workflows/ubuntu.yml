@@ -19,8 +19,11 @@ jobs:
       - name: Setup faketty
         uses: Yuri6037/Action-FakeTTY@v1.1
       
+      # ttyが必要なため、CIでは事前にインストールしておく
       - name: Install xh
-        run: curl -sfL https://raw.githubusercontent.com/ducaale/xh/master/install.sh | faketty sh
+        run: |
+          mkdir -p $HOME/.local/bin
+          curl -sfL https://raw.githubusercontent.com/ducaale/xh/master/install.sh | faketty sh
       
       - name: Setup
         run: |
