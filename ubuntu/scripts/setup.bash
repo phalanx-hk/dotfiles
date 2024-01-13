@@ -20,15 +20,6 @@ else
 	echo "--- rust is installed! ---"
 fi
 
-# xh client
-if ! command -v "xh" >/dev/null 2>&1; then
-	echo "--- install xh is start! ---"
-	curl -sfL https://raw.githubusercontent.com/ducaale/xh/master/install.sh | sh
-	echo "--- install xh is done! ---"
-else
-	echo "--- xh is installed! ---"
-fi
-
 # goenv
 if ! command -v "goenv" >/dev/null 2>&1; then
 	echo "--- install goenv is start! ---"
@@ -42,7 +33,7 @@ fi
 ## pyenv
 if ! command -v "pyenv" >/dev/null 2>&1; then
 	echo "--- install pyenv is start! ---"
-	xh get https://pyenv.run | bash
+	curl https://pyenv.run | bash
 	echo "--- install pyenv is done! ---"
 else
 	echo "--- pyenv is installed! ---"
@@ -51,7 +42,7 @@ fi
 ## poetry
 if ! command -v "poetry" >/dev/null 2>&1; then
 	echo "--- install poetry is start! ---"
-	xh get --follow https://install.python-poetry.org | python3 -
+	curl -sSL https://install.python-poetry.org | python3 -
 	echo "--- install poetry is done! ---"
 else
 	echo "--- poetry is installed! ---"
@@ -60,7 +51,7 @@ fi
 # starship
 if ! command -v "starship" >/dev/null 2>&1; then
 	echo "--- install starship is start! ---"
-	xh get https://starship.rs/install.sh | sh -s -- -y
+	curl https://starship.rs/install.sh | sh -s -- -y
 	echo "--- install starship is done! ---"
 else
 	echo "--- starship is installed! ---"
@@ -75,7 +66,7 @@ cargo install bat eza fd-find procs ripgrep du-dust bottom
 # act
 if ! command -v "act" >/dev/null 2>&1; then
 	echo "--- install act is start! ---"
-	xh get https://raw.githubusercontent.com/nektos/act/master/install.sh | sudo bash
+	curl https://raw.githubusercontent.com/nektos/act/master/install.sh | sudo bash
 	echo "--- install act is done! ---"
 else
 	echo "--- act is installed! ---"

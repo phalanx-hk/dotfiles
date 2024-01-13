@@ -13,7 +13,7 @@ fi
 # codewhisperをインストール
 if [ -z "$(command -v cw)" ]; then
 	echo "--- install codewhisper is start ---"
-	xh https://desktop-release.codewhisperer.us-east-1.amazonaws.com/latest/CodeWhisperer.dmg --download --output /tmp/CodeWhisperer.dmg
+	curl https://desktop-release.codewhisperer.us-east-1.amazonaws.com/latest/CodeWhisperer.dmg -o /tmp/CodeWhisperer.dmg
 	hdiutil attach /tmp/CodeWhisperer.dmg
 	cp -r /Volumes/CodeWhisperer/CodeWhisperer.app /Applications/
 	echo "--- install codewhisper is done---"
