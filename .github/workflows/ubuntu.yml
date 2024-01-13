@@ -30,9 +30,6 @@ jobs:
             ~/.cargo/git
             target
           key: ${{ runner.os }}-cargo-${{ github.job }}-${{ hashFiles('**/Cargo.lock') }}
-
-      - name: Setup faketty
-        uses: Yuri6037/Action-FakeTTY@v1.1
       
       - name: Setup
         run: |
