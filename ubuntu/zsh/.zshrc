@@ -28,7 +28,7 @@ setopt AUTO_CD
 setopt AUTO_PARAM_KEYS
 
 alias cat='bat'
-alias ls='eza  --icons --long'
+alias ls='eza  --icons --long --time-style=long-iso'
 alias find='fd'
 alias ps='procs --tree'
 alias grep='rg'

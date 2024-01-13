@@ -1,4 +1,4 @@
-name: Ubuntu
+name: ubuntu amd64/aarch64
 
 on: 
   push:
@@ -8,13 +8,28 @@ on:
       - 'LICENSE'
 
 jobs:
-  ubuntu:
-    name: Ubuntu
+  ubuntu_amd64_aarch64:
+    name: ubuntu_amd64_aarch64
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        platform: ["linux/aarch64", "linux/amd64"]
 
     steps:
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+        with:
+          platforms: ${{ matrix.platform }}
       - name: Checkout
         uses: actions/checkout@v4
+
+      - uses: actions/cache@v2
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            target
+          key: ${{ runner.os }}-cargo-${{ github.job }}-${{ hashFiles('**/Cargo.lock') }}
 
       - name: Setup faketty
         uses: Yuri6037/Action-FakeTTY@v1.1

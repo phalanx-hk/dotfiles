@@ -38,10 +38,12 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo 
 	sudo apt install gh -y
 
 # Docker
+arch=$(uname -m)
 curl -fsSL 'https://download.docker.com/linux/ubuntu/gpg' | apt-key add -
-if [ "$arch" == "aarch64" ]; then
+if [ "$arch" = "aarch64" ]; then
 	add-apt-repository -y "deb [arch=arm64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-elif [ "$arch" == "x86_64" ]; then
+elif [ "$arch" = "x86_64" ]; then
 	add-apt-repository -y "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+fi
 apt-get update
 apt-get install -y docker-ce docker-ce-cli
