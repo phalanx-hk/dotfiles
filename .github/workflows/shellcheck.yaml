@@ -1,4 +1,4 @@
-name: shell lint
+name: shellcheck
 
 on: 
   push:
@@ -8,8 +8,8 @@ on:
       - 'LICENSE'
 
 jobs:
-  shell_lint:
-    name: shell_lint
+  shellcheck:
+    name: shellcheck
     runs-on: ubuntu-latest
 
     steps:
