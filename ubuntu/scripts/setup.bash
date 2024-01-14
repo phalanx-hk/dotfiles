@@ -97,7 +97,7 @@ ln -sf "$REPO_DIR"/ubuntu/sheldon/sheldon.toml ~/.config/sheldon/sheldon.toml
 
 ## gh
 mkdir -p ~/.config/gh
-ln -sf "$REPO_DIR"/ubuntu/gh/config.yml ~/.config/sheldon/config.yml
-ln -sf "$REPO_DIR"/ubuntu/gh/hosts.yml ~/.config/sheldon/hosts.yml
+ln -sf "$REPO_DIR"/ubuntu/gh/config.yml ~/.config/gh/config.yml
+ln -sf "$REPO_DIR"/ubuntu/gh/hosts.yml ~/.config/gh/hosts.yml
 
 echo "--- Link dotfiles is Done!  ---"
