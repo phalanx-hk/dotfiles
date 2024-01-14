@@ -2,7 +2,8 @@
 
 [![macOS](https://github.com/phalanx-hk/dotfiles/actions/workflows/mac.yml/badge.svg)](https://github.com/phalanx-hk/dotfiles/actions/workflows/mac.yml)
 [![Ubuntu](https://github.com/phalanx-hk/dotfiles/actions/workflows/ubuntu.yml/badge.svg)](https://github.com/phalanx-hk/dotfiles/actions/workflows/ubuntu.yml)
-[![Lint](https://github.com/phalanx-hk/dotfiles/actions/workflows/lint.yaml/badge.svg)](https://github.com/phalanx-hk/dotfiles/actions/workflows/lint.yaml)
+[![shellcheck](https://github.com/phalanx-hk/dotfiles/actions/workflows/shellcheck.yaml/badge.svg)](https://github.com/phalanx-hk/dotfiles/actions/workflows/shellcheck.yaml)
+[![actionlint](https://github.com/phalanx-hk/dotfiles/actions/workflows/actionlint.yaml/badge.svg)](https://github.com/phalanx-hk/dotfiles/actions/workflows/actionlint.yaml)
 
 ## mac
 
