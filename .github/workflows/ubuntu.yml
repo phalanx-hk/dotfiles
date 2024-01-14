@@ -1,4 +1,4 @@
-name: ubuntu amd64/aarch64
+name: ubuntu
 
 on: 
   push:
@@ -9,8 +9,8 @@ on:
       - 'mac/**'
 
 jobs:
-  ubuntu_amd64_aarch64:
-    name: ubuntu_amd64_aarch64
+  ubuntu:
+    name: ubuntu
     runs-on: ubuntu-latest
     strategy:
       matrix:
