@@ -10,7 +10,7 @@
   "editor.inlineSuggest.enabled": true,
   "editor.minimap.enabled": false,
   "editor.tabCompletion": "on",
-  "editor.tabSize": 2,
+  "editor.tabSize": 4,
   "git.autofetch": true,
   "git.confirmSync": false,
   "git.openRepositoryInParentFolders": "never",

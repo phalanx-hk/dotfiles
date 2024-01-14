@@ -53,6 +53,6 @@ ln -sf ~/dotfiles/mac/gh/config.yml ~/.config/gh/config.yml
 ln -sf ~/dotfiles/mac/gh/hosts.yml ~/.config/gh/hosts.yml
 
 # vscode
-cp ~/dotfiles/mac/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
+sh vscode/install.sh
 
 echo "--- Link dotfiles is Done!  ---"
