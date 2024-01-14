@@ -49,8 +49,8 @@ ln -sf ~/dotfiles/mac/sheldon/sheldon.toml ~/.config/sheldon/sheldon.toml
 
 # gh
 mkdir -p ~/.config/gh
-ln -sf ~/dotfiles/mac/gh/config.yml ~/.config/sheldon/config.yml
-ln -sf ~/dotfiles/mac/gh/hosts.yml ~/.config/sheldon/hosts.yml
+ln -sf ~/dotfiles/mac/gh/config.yml ~/.config/gh/config.yml
+ln -sf ~/dotfiles/mac/gh/hosts.yml ~/.config/gh/hosts.yml
 
 # vscode
 cp ~/dotfiles/mac/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
