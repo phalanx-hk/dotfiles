@@ -45,7 +45,7 @@ ln -sf ~/dotfiles/mac/zsh/.zshrc ~/.zshrc
 
 # sheldon
 mkdir -p ~/.config/sheldon
-ln -sf ~/dotfiles/mac/sheldon/sheldon.toml ~/.config/sheldon/sheldon.toml
+ln -sf ~/dotfiles/mac/sheldon/plugins.toml ~/.config/sheldon/plugins.toml
 
 # gh
 mkdir -p ~/.config/gh

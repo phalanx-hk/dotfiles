@@ -93,7 +93,7 @@ ln -sf "$REPO_DIR"/ubuntu/zsh/.zshrc ~/.zshrc
 
 ## sheldon
 mkdir -p ~/.config/sheldon
-ln -sf "$REPO_DIR"/ubuntu/sheldon/sheldon.toml ~/.config/sheldon/sheldon.toml
+ln -sf "$REPO_DIR"/ubuntu/sheldon/plugins.toml ~/.config/sheldon/plugins.toml
 
 ## gh
 mkdir -p ~/.config/gh
