@@ -13,11 +13,6 @@ source "$PARENT_DIR"/common/common.sh
 ### link dotfiles ###
 /bin/sh "$CUR_DIR"/link.sh
 
-### install packages from Brewfile ###
-echo "--- Install packages from Brewfile is Start! ---"
-brew bundle --global
-echo "--- Install packages from Brewfile is Done!  ---"
-
 ### install rust ###
 /bin/sh "$PARENT_DIR"/common/rust.sh
 
