@@ -1,0 +1,62 @@
+{
+  "autoDocstring.docstringFormat": "google",
+  "debug.console.fontSize": 16,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.acceptSuggestionOnEnter": "off",
+  "editor.accessibilitySupport": "off",
+  "editor.bracketPairColorization.enabled": false,
+  "editor.codeActionsOnSave": {},
+  "editor.detectIndentation": true,
+  "editor.inlayHints.enabled": "onUnlessPressed",
+  "editor.inlineSuggest.enabled": true,
+  "editor.minimap.enabled": false,
+  "editor.tabCompletion": "on",
+  "editor.tabSize": 4,
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "git.openRepositoryInParentFolders": "never",
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": true,
+    "markdown": true,
+    "": "true",
+    "go": true,
+    "jsonc": true,
+    "rust": true,
+    "typescript": true,
+    "yaml": true,
+    "terraform": "true"
+  },
+  "html.format.wrapLineLength": 150,
+  "remote.SSH.configFile": "/Users/hirotoshi-kitamura/.ssh/config",
+  "remote.SSH.useLocalServer": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "settingsSync.ignoredExtensions": [],
+  "terminal.integrated.enableMultiLinePasteWarning": false,
+  "workbench.colorTheme": "GitHub Dark Default",
+  "workbench.settings.useSplitJSON": false,
+  "workbench.panel.defaultLocation": "right",
+  "terminal.integrated.env.osx": {
+    "CW_NEW_SESSION": "1"
+  },
+  "git.enableSmartCommit": true,
+  "terminal.integrated.fontFamily": "Hack Nerd Font",
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "remote.SSH.remotePlatform": {
+    "dev-kitamura-gpu.asia-northeast1-a.ai-lab-sandbox": "linux"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml",
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "advanced",
+    "editor.formatOnSave": true
+  },
+  "yaml.format.enable": true,
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml",
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true
+  }
+}

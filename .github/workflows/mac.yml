@@ -3,22 +3,17 @@ name: macOS
 on: 
   push:
     branches: main
+  pull_request:
+    branches: main
     paths-ignore:
       - 'README.md'
-      - 'LICENSE'
-      - 'ubuntu/**'
 
 jobs:
   macOS:
     name: macOS
-    runs-on: macOS-latest
-
+    runs-on: macos-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-              
       - name: Setup
-        run: |
-          cd mac
-          chmod +x setup.sh
-          sh setup.sh
+        run: make mac
