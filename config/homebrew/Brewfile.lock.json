@@ -9,6 +9,9 @@
       },
       "rcmdnk/file": {
         "revision": "dd3749dbd5b81fdeafc7131d987d314c0a8bd9fb"
+      },
+      "homebrew/cask-fonts": {
+        "revision": "9cfef62b9aa4d467d265a253149252a17f11ecdd"
       }
     },
     "brew": {

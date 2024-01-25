@@ -1,6 +1,7 @@
 tap "hashicorp/tap"
 tap "homebrew/bundle"
 tap "rcmdnk/file"
+tap "homebrew/cask-fonts"
 brew "act"
 brew "bat"
 brew "bottom"
