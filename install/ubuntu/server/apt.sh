@@ -30,7 +30,7 @@ function install_bottom() {
 		deb_url=https://github.com/ClementTsang/bottom/releases/download/${latest_version}/bottom_${latest_version}_amd64.deb
 	fi
 	curl -fSL "{$deb_url}" -o "${tmp_file}"
-	dpkg -i install $tmp_file
+	dpkg -i install "$tmp_file"
 }
 
 function install_packer() {
