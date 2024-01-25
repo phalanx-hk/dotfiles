@@ -4,6 +4,16 @@ set -x
 
 SCRIPT_DIR=$(dirname "$(readlink -f "$0")")
 PARENT_DIR=$(dirname "$SCRIPT_DIR")
+BREWFILE="$REPO_DIR"/config/homebrew/Brewfile
+
+
+function cleanup_brewfile() {
+	tmpfile=$(mktemp)
+	grep -v '^cask' "$BREWFILE" > "$tmpfile"
+	mv "$BREWFILE" "$BREWFILE".orig
+	mv "$tmpfile" "$BREWFILE"
+}
+
 # shellcheck source=/dev/null
 source "$PARENT_DIR"/common/common.sh
 
@@ -18,5 +28,8 @@ else
 fi
 
 echo "--- Install packages from Brewfile is Start! ---"
+if [ -n "$GITHUB_ACTIONS" ]; then
+	cleanup_brewfile
+fi
 brew bundle --file="$REPO_DIR"/config/homebrew/Brewfile
 echo "--- Install packages from Brewfile is Done!  ---"

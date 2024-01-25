@@ -22,13 +22,6 @@ jobs:
         with: 
           ssh-private-key: |
             ${{ secrets.SSH_PRIVATE_KEY }}
-      - name: Configure Homebrew cache
-        uses: actions/cache@v4
-        with:
-          path: |
-            ~/Library/Caches/Homebrew
-            ~/Library/Caches/Homebrew/downloads
-          key: ${{ runner.os }}-brew-${{ hashFiles('**/Brewfile.lock.json') }}
       - name: Setup
         run: make mac
         env:
