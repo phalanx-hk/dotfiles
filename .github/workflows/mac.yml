@@ -22,7 +22,9 @@ jobs:
         with: 
           ssh-private-key: |
             ${{ secrets.SSH_PRIVATE_KEY }}
+      - name: install just
+        run: curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh | bash -s -- --to /usr/local/bin
       - name: Setup
-        run: make mac
+        run: just mac
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

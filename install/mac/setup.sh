@@ -3,11 +3,11 @@ set -Eeuo pipefail
 set -x
 
 SCRIPT_DIR=$(dirname "$(readlink -f "$0")")
-PARENT_DIR=$(dirname "$SCRIPT_DIR")
+ROOT_DIR=$(dirname "$SCRIPT_DIR")
 
 
 # shellcheck source=/dev/null
-source "$PARENT_DIR"/common/common.sh
+source "$ROOT_DIR"/common/common.sh
 
 ### install homebrew ###
 /bin/sh "$CUR_DIR/homebrew.sh"
@@ -16,22 +16,22 @@ source "$PARENT_DIR"/common/common.sh
 /bin/sh "$CUR_DIR"/link.sh
 
 ### install rust ###
-/bin/sh "$PARENT_DIR"/common/rust.sh
+/bin/sh "$ROOT_DIR"/common/rust.sh
 
 ### install goenv ###
-/bin/sh "$PARENT_DIR"/common/goenv.sh
+/bin/sh "$ROOT_DIR"/common/goenv.sh
 
 ### install tfenv ###
-/bin/sh "$PARENT_DIR"/common/tfenv.sh
+/bin/sh "$ROOT_DIR"/common/tfenv.sh
 
 ### install pyenv ###
-/bin/sh "$PARENT_DIR"/common/pyenv.sh
+/bin/sh "$ROOT_DIR"/common/pyenv.sh
 
 ### install poetry ###
-/bin/sh "$PARENT_DIR"/common/poetry.sh
+/bin/sh "$ROOT_DIR"/common/poetry.sh
 
 ### vscode ####
 /bin/sh "$CUR_DIR"/vscode.sh
 
 ### gh extension ###
-/bin/sh "$PARENT_DIR"/common/gh_extension.sh
+/bin/sh "$ROOT_DIR"/common/gh_extension.sh

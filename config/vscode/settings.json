@@ -43,11 +43,17 @@
     "editor.autoIndent": "advanced",
     "editor.formatOnSave": true
   },
+  "[json]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "advanced",
+    "editor.formatOnSave": true
+  },
+  "json.format.enable": true,
   "yaml.format.enable": true,
   "[github-actions-workflow]": {
     "editor.defaultFormatter": "redhat.vscode-yaml",
     "editor.tabSize": 2,
     "editor.insertSpaces": true
   },
-  "diffEditor.hideUnchangedRegions.enabled": true,
 }
