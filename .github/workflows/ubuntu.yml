@@ -29,11 +29,11 @@ jobs:
         uses: docker/setup-qemu-action@v3
         with:
           platforms: ${{ matrix.platform }}
-      - name: Checkout
-        uses: actions/checkout@v4
       - name: install just
         uses: extractions/setup-just@v1
         with:
           just-version: 1.4
+      - name: Checkout
+        uses: actions/checkout@v4
       - name: Setup
         run: just devcontainer

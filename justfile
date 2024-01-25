@@ -1,5 +1,3 @@
-set shell := ["zsh", "-cu"]
-
 # install dotfiles on mac environment
 mac:
 	@/bin/sh install/mac/setup.sh
