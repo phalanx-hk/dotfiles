@@ -7,10 +7,10 @@ if [ -z "$(command -v brew)" ]; then
 	echo eval "$(/opt/homebrew/bin/brew shellenv)" >>/Users/"${USER}"/.zprofile
 	eval "$(/opt/homebrew/bin/brew shellenv)"
 	echo "--- Install Homebrew is Done!  ---"
-
-	echo "--- Install packages from Brewfile is Start! ---"
-	brew bundle --global
-	echo "--- Install packages from Brewfile is Done!  ---"
 else
 	echo "Hoembrew has been already installed!"
 fi
+
+echo "--- Install packages from Brewfile is Start! ---"
+brew bundle --global
+echo "--- Install packages from Brewfile is Done!  ---"
