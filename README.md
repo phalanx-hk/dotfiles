@@ -4,10 +4,10 @@
 
 ## install just command runner
 ```bash
-INSTALL_DIR=~/.local/bin
+INSTALL_DIR=$HOME/.local/bin
 curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh | bash -s -- --to ${INSTALL_DIR}
-# echo "export PATH=$PATH:$INSTALL_DIR" >> ~/.zshenv
-export PATH=$PATH:$INSTALL_DIR
+# echo 'export PATH="$INSTALL_DIR:$PATH"' >> ~/.zshenv
+export PATH="$INSTALL_DIR:$PATH"
 just --version
 ```
 
