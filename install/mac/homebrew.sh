@@ -9,7 +9,9 @@ BREWFILE="$REPO_DIR"/config/homebrew/Brewfile
 
 function cleanup_brewfile() {
 	tmpfile=$(mktemp)
-	grep -v '^cask' "$BREWFILE" > "$BREWFILE"
+	grep -v '^cask' "$BREWFILE" > "$tmpfile"
+	mv "$BREWFILE" "$BREWFILE".orig
+	mv "$tmpfile" "$BREWFILE"
 }
 
 # shellcheck source=/dev/null
@@ -26,7 +28,7 @@ else
 fi
 
 echo "--- Install packages from Brewfile is Start! ---"
-if [ -z "${GITHUB_ACTIONS+x}" ]; then
+if [ ! -z "${GITHUB_ACTIONS+x}" ]; then
 	echo "Running on GitHub Actions, cleaning up Brewfile"
 	cleanup_brewfile
 fi
