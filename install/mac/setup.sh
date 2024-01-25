@@ -23,7 +23,10 @@ source "$PARENT_DIR"/common/common.sh
 /bin/sh "$PARENT_DIR"/common/tfenv.sh
 
 ### install pyenv ###
-/bin/sh "$CUR_DIR"/pyenv.sh
+/bin/sh "$PARENT_DIR"/common/pyenv.sh
+
+### install poetry ###
+/bin/sh "$PARENT_DIR"/common/poetry.sh
 
 ### vscode ####
 /bin/sh "$CUR_DIR"/vscode.sh

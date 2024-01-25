@@ -1,7 +1,6 @@
 {
   "autoDocstring.docstringFormat": "google",
   "debug.console.fontSize": 16,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.acceptSuggestionOnEnter": "off",
   "editor.accessibilitySupport": "off",
   "editor.bracketPairColorization.enabled": false,
@@ -16,16 +15,7 @@
   "git.confirmSync": false,
   "git.openRepositoryInParentFolders": "never",
   "github.copilot.enable": {
-    "*": false,
-    "plaintext": true,
-    "markdown": true,
-    "": "true",
-    "go": true,
-    "jsonc": true,
-    "rust": true,
-    "typescript": true,
-    "yaml": true,
-    "terraform": "true"
+    "*": true,
   },
   "html.format.wrapLineLength": 150,
   "remote.SSH.configFile": "/Users/hirotoshi-kitamura/.ssh/config",
@@ -33,7 +23,7 @@
   "security.workspace.trust.untrustedFiles": "open",
   "settingsSync.ignoredExtensions": [],
   "terminal.integrated.enableMultiLinePasteWarning": false,
-  "workbench.colorTheme": "GitHub Dark Default",
+  "workbench.colorTheme": "GitHub Dark",
   "workbench.settings.useSplitJSON": false,
   "workbench.panel.defaultLocation": "right",
   "terminal.integrated.env.osx": {
@@ -58,5 +48,6 @@
     "editor.defaultFormatter": "redhat.vscode-yaml",
     "editor.tabSize": 2,
     "editor.insertSpaces": true
-  }
+  },
+  "diffEditor.hideUnchangedRegions.enabled": true,
 }

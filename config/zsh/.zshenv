@@ -1,6 +1,8 @@
 export LANG="en_US.UTF-8"
 unsetopt GLOBAL_RCS
 
+export PATH="$HOME/.local/bin:$PATH"
+
 ### goenv ###
 export GOENV_ROOT="$HOME/.goenv"
 export PATH="$GOENV_ROOT/bin:$PATH"
