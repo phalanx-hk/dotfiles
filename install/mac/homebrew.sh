@@ -28,7 +28,7 @@ else
 fi
 
 echo "--- Install packages from Brewfile is Start! ---"
-if [ ! -z "${GITHUB_ACTIONS+x}" ]; then
+if [ -n "${GITHUB_ACTIONS+x}" ]; then
 	echo "Running on GitHub Actions, cleaning up Brewfile"
 	cleanup_brewfile
 fi
