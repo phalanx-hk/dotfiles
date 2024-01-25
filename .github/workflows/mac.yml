@@ -5,10 +5,14 @@ on:
     branches: main
     paths-ignore:
       - 'README.md'
+      - 'install/ubuntu/**'
+      - '.github/workflows/ubuntu.yml'
   pull_request:
     branches: main
     paths-ignore:
       - 'README.md'
+      - 'install/ubuntu/**'
+      - '.github/workflows/ubuntu.yml'
 
 jobs:
   macOS:
@@ -25,7 +29,7 @@ jobs:
       - name: install just
         uses: extractions/setup-just@v1
         with:
-          just-version: 0.8
+          just-version: 1.4
       - name: Setup
         run: just mac
         env:

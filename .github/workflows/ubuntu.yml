@@ -1,0 +1,39 @@
+name: ubuntu
+
+on: 
+  push:
+    branches: main
+    paths-ignore:
+      - 'README.md'
+      - 'install/mac/**'
+      - '.github/workflows/mac.yml'
+      - '.github/workflows/lint.yml'
+  pull_request:
+    branches: main
+    paths-ignore:
+      - 'README.md'
+      - 'install/mac/**'
+      - '.github/workflows/mac.yml'
+      - '.github/workflows/lint.yml'
+
+jobs:
+  ubuntu:
+    name: ubuntu
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        platform: ["linux/arm64", "linux/amd64"]
+
+    steps:
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+        with:
+          platforms: ${{ matrix.platform }}
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: install just
+        uses: extractions/setup-just@v1
+        with:
+          just-version: 1.4
+      - name: Setup
+        run: just devcontainer

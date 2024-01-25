@@ -6,7 +6,7 @@ mac:
 
 # install dotfiles on devcontainer
 devcontainer:
-    @/bin/sh install/ubuntu/server/devcontainer/setup.sh
+    /bin/sh install/ubuntu/server/setup.sh
 
 #install dotfiles on ubuntu client
 ubuntu-client:
