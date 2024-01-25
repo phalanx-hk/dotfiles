@@ -5,6 +5,7 @@ set -x
 SCRIPT_DIR=$(dirname "$(readlink -f "$0")")
 PARENT_DIR=$(dirname "$SCRIPT_DIR")
 
+
 # shellcheck source=/dev/null
 source "$PARENT_DIR"/common/common.sh
 
