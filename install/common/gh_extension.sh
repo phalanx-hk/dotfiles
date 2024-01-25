@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -Eeuo pipefail
 set -x
 
 echo "--- gh extension install is Start! ---"

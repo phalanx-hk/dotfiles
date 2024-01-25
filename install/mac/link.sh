@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -Eeuo pipefail
 set -x
 
 SCRIPT_DIR=$(dirname "$(readlink -f "$0")")

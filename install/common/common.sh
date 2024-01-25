@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -Eeuo pipefail
 set -x
 
 export CUR_DIR REPO_DIR

@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -Eeuo pipefail
 set -x
 
 echo "--- Install vscode extensions is Start! ---"
