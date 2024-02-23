@@ -3,10 +3,6 @@ unsetopt GLOBAL_RCS
 
 export PATH="$HOME/.local/bin:$PATH"
 
-### goenv ###
-export GOENV_ROOT="$HOME/.goenv"
-export PATH="$GOENV_ROOT/bin:$PATH"
-
 ### rust ###
 export PATH="$HOME/.cargo/bin:$PATH"
 
@@ -15,3 +11,7 @@ export PATH="$HOME/.tfenv/bin:$PATH"
 
 ### pyenv ###
 export PATH="$HOME/.pyenv/bin:$PATH"
+
+### golang ###
+export GOPATH="$HOME/go"
+export PATH="$GOPATH/bin:$PATH"

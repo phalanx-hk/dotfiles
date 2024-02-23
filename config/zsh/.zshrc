@@ -4,9 +4,6 @@ eval "$(starship init zsh)"
 # sheldon
 eval "$(sheldon source)"
 
-# goenv
-eval "$(goenv init -)" 
-
 # onepassword
 source ~/.config/op/plugins.sh
 

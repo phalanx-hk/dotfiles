@@ -4,7 +4,6 @@
   "editor.acceptSuggestionOnEnter": "off",
   "editor.accessibilitySupport": "off",
   "editor.bracketPairColorization.enabled": false,
-  "editor.codeActionsOnSave": {},
   "editor.detectIndentation": true,
   "editor.inlayHints.enabled": "onUnlessPressed",
   "editor.inlineSuggest.enabled": true,
@@ -16,16 +15,17 @@
   "git.openRepositoryInParentFolders": "never",
   "github.copilot.enable": {
     "*": true,
+    "markdown": true
   },
   "html.format.wrapLineLength": 150,
   "remote.SSH.configFile": "/Users/hirotoshi-kitamura/.ssh/config",
   "remote.SSH.useLocalServer": false,
   "security.workspace.trust.untrustedFiles": "open",
   "settingsSync.ignoredExtensions": [],
-  "terminal.integrated.enableMultiLinePasteWarning": false,
-  "workbench.colorTheme": "GitHub Dark",
+  "terminal.integrated.enableMultiLinePasteWarning": "never",
+  "workbench.colorTheme": "Mix Night blue",
   "workbench.settings.useSplitJSON": false,
-  "workbench.panel.defaultLocation": "right",
+  "workbench.panel.defaultLocation": "bottom",
   "terminal.integrated.env.osx": {
     "CW_NEW_SESSION": "1"
   },
@@ -33,9 +33,6 @@
   "terminal.integrated.fontFamily": "Hack Nerd Font",
   "terminal.integrated.defaultProfile.osx": "zsh",
   "terminal.integrated.defaultProfile.linux": "zsh",
-  "remote.SSH.remotePlatform": {
-    "dev-kitamura-gpu.asia-northeast1-a.ai-lab-sandbox": "linux"
-  },
   "[yaml]": {
     "editor.defaultFormatter": "redhat.vscode-yaml",
     "editor.insertSpaces": true,
@@ -56,4 +53,14 @@
     "editor.tabSize": 2,
     "editor.insertSpaces": true
   },
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
+  "window.zoomLevel": 2,
+  "workbench.colorCustomizations": {
+    "editor.selectionHighlightBackground": "#ce040470",
+    "editor.selectionBackground": "#00ff0060"
+  },
+  "editor.stickyScroll.enabled": true,
+  "editor.hover.sticky": true,
 }

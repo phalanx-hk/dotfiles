@@ -33,36 +33,16 @@ function install_bottom() {
 	dpkg -i install "$tmp_file"
 }
 
-function install_packer() {
-	curl -fsSL https://apt.releases.hashicorp.com/gpg | apt-key add -
-	if [ "$(uname -m)" != "x86_64" ]; then 
-		apt-add-repository "deb [arch=arm64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
-	else
-		apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
-	fi
-	apt update && apt install packer
-}
-
-function install_docker() {
-	curl -fsSL 'https://download.docker.com/linux/ubuntu/gpg' | apt-key add -
-	if [ "$(uname -m)" != "x86_64" ]; then 
-		add-apt-repository -y "deb [arch=arm64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-	else
-		add-apt-repository -y "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-	fi
-	apt-get update
-	apt-get install -y docker-ce docker-ce-cli
-}
-
 function install_base() {
 	add-apt-repository -y ppa:git-core/ppa
 	apt-get update 
 	apt-get upgrade -y
 	apt-get install -y \
-		apt-utils \
-		autoconf \
+		sudo \
+		software-properties-common \
 		bat \
 		build-essential \
+		curl \
 		clang \
 		clangd \
 		clang-format \
@@ -80,13 +60,15 @@ function install_base() {
 		sqlite3 \
 		trash-cli \
 		unzip \
-		wget \
 		zip \
 		zsh
 }
 
 function main() {
 	install_base
+	install_eza
+	install_bottom
+	install_gh
 }
 
 main

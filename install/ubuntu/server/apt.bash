@@ -59,7 +59,6 @@ function install_base() {
 	apt-get update 
 	apt-get upgrade -y
 	apt-get install -y \
-		apt-utils \
 		autoconf \
 		bat \
 		build-essential \
@@ -87,6 +86,11 @@ function install_base() {
 
 function main() {
 	install_base
+	#install_gh
+	# install_eza
+	# install_bottom
+	install_docker
+	install_packer
 }
 
 main

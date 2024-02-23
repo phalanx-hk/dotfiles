@@ -18,9 +18,6 @@ source "$ROOT_DIR"/common/common.sh
 ### install rust ###
 /bin/sh "$ROOT_DIR"/common/rust.sh
 
-### install goenv ###
-/bin/sh "$ROOT_DIR"/common/goenv.sh
-
 ### install tfenv ###
 /bin/sh "$ROOT_DIR"/common/tfenv.sh
 

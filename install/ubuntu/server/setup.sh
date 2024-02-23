@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-set -Eeu pipefail
-set -x
+set -Eeuxo pipefail
 
 
 SCRIPT_DIR=$(dirname "$(readlink -f "$0")")
@@ -10,4 +9,4 @@ ROOT_DIR=$(dirname "$(dirname "$SCRIPT_DIR")")
 . "$ROOT_DIR"/common/common.sh
 
 ### install apt packages ###
-/bin/sh "$CUR_DIR"/apt.sh
+sudo /bin/bash "$CUR_DIR"/apt.bash

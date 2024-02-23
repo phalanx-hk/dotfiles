@@ -2,5 +2,6 @@
 
 --map-syntax=".*ignore:Git Ignore"
 --map-syntax="*Brewfile:Ruby"
+--map-syntax="go*:Go"
 
 --italic-text=always
