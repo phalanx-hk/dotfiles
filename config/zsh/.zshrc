@@ -4,9 +4,6 @@ eval "$(starship init zsh)"
 # sheldon
 eval "$(sheldon source)"
 
-# onepassword
-source ~/.config/op/plugins.sh
-
 # pyenv
 eval "$(pyenv init -)"
 
