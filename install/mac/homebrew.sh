@@ -1,10 +1,17 @@
 #!/usr/bin/env bash
-set -Eeuo pipefail
-set -x
+set -Eeuxo pipefail
 
-SCRIPT_DIR=$(dirname "$(readlink -f "$0")")
-PARENT_DIR=$(dirname "$SCRIPT_DIR")
+CUR_DIR=$(dirname "$(readlink -f "$0")")
+dir=$CUR_DIR
+while [[ "$dir" != "/" ]]; do
+  if [[ -d "$dir/.git" ]]; then
+    REPO_DIR=$dir
+    break
+  fi
+  dir=$(dirname "$dir")
+done
 BREWFILE="$REPO_DIR"/config/homebrew/Brewfile
+readonly CUR_DIR REPO_DIR BREWFILE
 
 
 function cleanup_brewfile() {
@@ -14,23 +21,29 @@ function cleanup_brewfile() {
 	mv "$tmpfile" "$BREWFILE"
 }
 
-# shellcheck source=/dev/null
-source "$PARENT_DIR"/common/common.sh
+function install_homebrew() {
+	if [ -z "$(command -v brew)" ]; then
+		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+		echo eval "$(/opt/homebrew/bin/brew shellenv)" >>/Users/"${USER}"/.zprofile
+		eval "$(/opt/homebrew/bin/brew shellenv)"
+	else
+		echo "Hoembrew has been already installed, skip."
+	fi
+}
 
-if [ -z "$(command -v brew)" ]; then
-	echo "--- Install Homebrew is Start! ---"
-	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-	echo eval "$(/opt/homebrew/bin/brew shellenv)" >>/Users/"${USER}"/.zprofile
-	eval "$(/opt/homebrew/bin/brew shellenv)"
-	echo "--- Install Homebrew is Done!  ---"
-else
-	echo "Hoembrew has been already installed!"
-fi
+function install_brew_packages() {
+	if [ -n "${GITHUB_ACTIONS+x}" ]; then
+		echo "Running on GitHub Actions, cleaning up Brewfile"
+		cleanup_brewfile
+	fi
+	brew bundle --file="$REPO_DIR"/config/homebrew/Brewfile
+}
 
-echo "--- Install packages from Brewfile is Start! ---"
-if [ -n "${GITHUB_ACTIONS+x}" ]; then
-	echo "Running on GitHub Actions, cleaning up Brewfile"
-	cleanup_brewfile
+function main() {
+	install_homebrew
+	install_brew_packages
+}
+
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+	main
 fi
-brew bundle --file="$REPO_DIR"/config/homebrew/Brewfile
-echo "--- Install packages from Brewfile is Done!  ---"

@@ -72,6 +72,8 @@ function install_apt_package() {
 		wget \
 		zip \
 		zsh
+	mkdir -p "${HOME}"/.local/bin
+	ln -s /usr/bin/batcat "${HOME}"/.local/bin/bat
 }
 
 function main() {
