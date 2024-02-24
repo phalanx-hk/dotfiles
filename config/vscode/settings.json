@@ -18,7 +18,6 @@
     "markdown": true
   },
   "html.format.wrapLineLength": 150,
-  "remote.SSH.configFile": "/Users/hirotoshi-kitamura/.ssh/config",
   "remote.SSH.useLocalServer": false,
   "security.workspace.trust.untrustedFiles": "open",
   "settingsSync.ignoredExtensions": [],

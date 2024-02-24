@@ -1,11 +1,12 @@
 [alias]
     aliases = config --get-regexp '^alias.*'
+
     uncommit = reset --soft HEAD^
 
 [user]
 	email = zfphalanx@gmail.com
 	name = phalanx-hk
-    signingkey = 0769CE1DDF2E8DDA
+    signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPxta3+oQYx6mA5aIQEKpK2KUO6PunVKxeJiD9g1hPt9
 
 [core]
     pager = delta
@@ -29,7 +30,12 @@
     colorMoved = default
     algorithm = histogram
 
+[gpg]
+    format = ssh
 
+[commit]
+    gpgsign = true
+    
 [push]
     default = simple
     followTags = true
@@ -41,8 +47,6 @@
 [url "git@github.com:"]
     pushInsteadOf = https://github.com/
 [credential "https://github.com"]
-	helper = 
 	helper = !/usr/bin/gh auth git-credential
 [credential "https://gist.github.com"]
-	helper = 
 	helper = !/usr/bin/gh auth git-credential

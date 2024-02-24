@@ -29,11 +29,14 @@ jobs:
         uses: docker/setup-qemu-action@v3
         with:
           platforms: ${{ matrix.platform }}
-      - name: install just
-        uses: extractions/setup-just@v1
-        with:
-          just-version: 1.4
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.8.0
+        with: 
+          ssh-private-key: |
+            ${{ secrets.SSH_PRIVATE_KEY }}
       - name: Setup
-        run: just devcontainer
+        run: make ubuntu
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
