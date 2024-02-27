@@ -12,12 +12,13 @@ function addPackerRepo() {
 }
 
 function addDockerRepo() {
-	curl -fsSL 'https://download.docker.com/linux/ubuntu/gpg' | apt-key add -
-	if [ "$(uname -m)" != "x86_64" ]; then 
-		add-apt-repository -y "deb [arch=arm64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-	else
-		add-apt-repository -y "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-	fi
+	install -m 0755 -d /etc/apt/keyrings
+	curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+	chmod a+r /etc/apt/keyrings/docker.asc
+	echo \
+		"deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  		$(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  		tee /etc/apt/sources.list.d/docker.list > /dev/null
 }
 
 function addGhRepo() {
@@ -34,10 +35,6 @@ function addEzaRepo() {
 }
 
 function install_apt_package() {
-	addDockerRepo
-	addPackerRepo
-	addGhRepo
-	addEzaRepo
 	add-apt-repository -y ppa:git-core/ppa
 	apt-get update 
 	apt-get upgrade -y
@@ -46,15 +43,13 @@ function install_apt_package() {
 		autoconf \
 		bat \
 		build-essential \
+		ca-certificates \
 		clang \
 		clangd \
 		clang-format \
 		cmake \
-		docker-ce \
-		docker-ce-cli \
-		eza \
+		curl \
 		fd-find \
-		gh \
 		git \
 		git-lfs \
 		gpg \
@@ -62,7 +57,6 @@ function install_apt_package() {
 		libfuse-dev \
 		libsqlite3-dev \
 		libssl-dev \
-		packer \
 		python3 \
 		ripgrep \
 		shellcheck \
@@ -72,8 +66,25 @@ function install_apt_package() {
 		wget \
 		zip \
 		zsh
-	mkdir -p "${HOME}"/.local/bin
-	ln -s /usr/bin/batcat "${HOME}"/.local/bin/bat
+	mv /usr/bin/batcat /usr/bin/bat
+	if ! command -v docker &> /dev/null; then
+		addDockerRepo
+		apt-get update
+		apt-get install -y \
+			docker-ce \
+			docker-ce-cli \
+			containerd.io \
+			docker-buildx-plugin \
+			docker-compose-plugin
+	fi
+	addPackerRepo
+	addGhRepo
+	addEzaRepo
+	apt-get update
+	apt-get install -y \
+		gh \
+		eza \
+		packer
 }
 
 function main() {
