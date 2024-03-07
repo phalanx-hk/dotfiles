@@ -18,3 +18,5 @@ alias top='btm'
 alias act='act --container-architecture linux/amd64'
 
 export GPG_TTY=$(tty)
+export HISTSIZE=10000
+export SAVEHIST=10000
