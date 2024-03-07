@@ -13,6 +13,7 @@ on:
       - 'README.md'
       - 'install/ubuntu/**'
       - '.github/workflows/ubuntu.yml'
+  workflow_dispatch:
 
 jobs:
   macOS:
