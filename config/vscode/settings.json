@@ -29,6 +29,7 @@
     "CW_NEW_SESSION": "1"
   },
   "git.enableSmartCommit": true,
+  "terminal.integrated.fontFamily": "Hack Nerd Font",
   "terminal.integrated.defaultProfile.osx": "zsh",
   "terminal.integrated.defaultProfile.linux": "zsh",
   "[yaml]": {
