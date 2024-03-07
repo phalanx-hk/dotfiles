@@ -9,6 +9,7 @@ eval "$(pyenv init -)"
 
 setopt AUTO_CD
 setopt AUTO_PARAM_KEYS
+setopt nonomatch
 
 alias cat='bat'
 alias ls='eza  --icons --long --time-style=long-iso --header'
