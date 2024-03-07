@@ -59,6 +59,7 @@ function install_apt_package() {
 		libsqlite3-dev \
 		libssl-dev \
 		python3 \
+		python3-pip \
 		ripgrep \
 		shellcheck \
 		sqlite3 \
