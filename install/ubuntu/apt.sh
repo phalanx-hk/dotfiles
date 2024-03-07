@@ -58,6 +58,9 @@ function install_apt_package() {
 		libfuse-dev \
 		libsqlite3-dev \
 		libssl-dev \
+		liblzma-dev \
+		libbz2-dev \
+		libreadline-dev \
 		python3 \
 		python3-pip \
 		ripgrep \
