@@ -40,6 +40,7 @@ function install_apt_package() {
 	apt-get update 
 	apt-get upgrade -y
 	apt-get install -y \
+		apt-transport-https \
 		apt-utils \
 		autoconf \
 		bat \
