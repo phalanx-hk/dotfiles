@@ -8,3 +8,7 @@ export PATH="$HOME/.docker/bin/docker:$PATH"
 
 # mise
 export PATH="$HOME/.local/share/mise/shims:$PATH"
+
+### cuda ###
+export PATH="/usr/local/cuda/bin:$PATH"
+export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
