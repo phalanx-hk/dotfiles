@@ -1,7 +1,5 @@
-tap "hashicorp/tap"
 tap "homebrew/bundle"
 tap "rcmdnk/file"
-tap "homebrew/cask-fonts"
 brew "glib"
 brew "cairo"
 brew "coreutils"
