@@ -13,18 +13,6 @@ sudo bash "${CUR_DIR}"/apt.sh
 #### link dotfiles ####
 bash "${ROOT_DIR}"/link.sh
 
-#### ubuntu tools ####
-readonly TOOL_DIR="${CUR_DIR}"/tools/
-for SCRIPT in "${TOOL_DIR}"/*.sh; do
-  if [ -f "$SCRIPT" ]; then
-    echo "Executing ${SCRIPT}..."
-    chmod +x "${SCRIPT}"
-    sudo bash "${SCRIPT}"
-  else
-    echo "No shell scripts found in ${COMMON_DIR}."
-  fi
-done
-
 #### common tools ####
 readonly COMMON_DIR="${ROOT_DIR}"/common/
 for SCRIPT in "${COMMON_DIR}"/*.sh; do
@@ -36,3 +24,6 @@ for SCRIPT in "${COMMON_DIR}"/*.sh; do
     echo "No shell scripts found in ${COMMON_DIR}."
   fi
 done
+
+#### install mise dependencies ####
+mise install -y

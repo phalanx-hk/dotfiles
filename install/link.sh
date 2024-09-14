@@ -63,3 +63,11 @@ ln -sf "${REPO_DIR}/config/vscode/settings.json" "${VSCODE_SETTING_DIR}/settings
 ### zsh ###
 ln -sf "$REPO_DIR"/config/zsh/.zshrc ~/.zshrc
 ln -sf "$REPO_DIR"/config/zsh/.zshenv ~/.zshenv
+
+
+### mise ###
+readonly MISE_CONFIG_DIR="$HOME/.config/mise"
+if [ ! -d "$MISE_CONFIG_DIR" ]; then
+    mkdir -p "$MISE_CONFIG_DIR"
+fi
+ln -sf "$REPO_DIR"/config/mise/mise.toml ~/.config/mise/config.toml

@@ -24,3 +24,6 @@ for SCRIPT in "${COMMON_DIR}"/*.sh; do
     echo "No shell scripts found in ${COMMON_DIR}."
   fi
 done
+
+### install mise dependencies ###
+mise install -y

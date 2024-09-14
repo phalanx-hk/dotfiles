@@ -1,0 +1,30 @@
+[tools]
+# languages
+python = ["3.11", "3.12"]
+rust = "1.81.0"
+terraform = "1.9.5"
+go = "1.23.1"
+
+# tools
+uv = "0.4.9"
+act = "latest"
+actionlint = "latest"
+hadolint = "latest"
+1password-cli = "latest"
+pre-commit = "latest"
+bat = "latest"
+bottom = "latest"
+eza = "latest"
+ripgrep = "latest"
+dust = "latest"
+github-cli = "latest"
+delta = "latest"
+starship = "latest"
+tflint = "latest"
+tfsec = "latest"
+packer = "latest"
+gcloud = "latest"
+just = "latest"
+
+# runtime
+node = "22.8.0"
