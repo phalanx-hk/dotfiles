@@ -1,6 +1,9 @@
 {
   "autoDocstring.docstringFormat": "google",
   "debug.console.fontSize": 16,
+  "editor.cursorSmoothCaretAnimation": "explicit",  // キャレットの移動にアニメーションを設定
+  "editor.renderLineHighlight": "all",  // 行番号が表示される部分も強調表示する
+  "editor.renderLineHighlightOnlyWhenFocus": false,  // エディタにフォーカスがある場合のみ強調表示を有効にする
   "editor.acceptSuggestionOnEnter": "off",
   "editor.accessibilitySupport": "off",
   "editor.bracketPairColorization.enabled": false,
@@ -10,19 +13,27 @@
   "editor.minimap.enabled": false,
   "editor.tabCompletion": "on",
   "editor.tabSize": 4,
+  "editor.stickyScroll.enabled": true,
+  "editor.hover.sticky": true,
   "git.autofetch": true,
   "git.confirmSync": false,
   "git.openRepositoryInParentFolders": "never",
+
+  // copilot
   "github.copilot.enable": {
     "*": true,
     "markdown": true
   },
+  "chat.experimental.detectParticipant.enabled": true,
   "html.format.wrapLineLength": 150,
   "remote.SSH.useLocalServer": false,
   "security.workspace.trust.untrustedFiles": "open",
   "settingsSync.ignoredExtensions": [],
   "terminal.integrated.enableMultiLinePasteWarning": "never",
-  "workbench.colorTheme": "Mix Night blue",
+  "window.title": " ",  // タイトルバーに表示されるテキストを空にする
+  "window.commandCenter": false, // タイトルバー中央のコマンドランチャーを無効化
+  "workbench.tree.indent": 24,  // エクスプローラのインデントを24pxに設定
+  "workbench.colorTheme": "Tomorrow Night Blue",
   "workbench.settings.useSplitJSON": false,
   "workbench.panel.defaultLocation": "bottom",
   "terminal.integrated.env.osx": {
@@ -45,6 +56,26 @@
     "editor.autoIndent": "advanced",
     "editor.formatOnSave": true
   },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true
+  },
   "json.format.enable": true,
   "yaml.format.enable": true,
   "[github-actions-workflow]": {
@@ -60,6 +91,13 @@
     "editor.selectionHighlightBackground": "#ce040470",
     "editor.selectionBackground": "#00ff0060"
   },
-  "editor.stickyScroll.enabled": true,
-  "editor.hover.sticky": true,
+  "remote.SSH.remotePlatform": {
+    "phalanx": "linux",
+    "dev-kitamura-gpu": "linux"
+  },
+  "vsicons.dontShowNewVersionMessage": true,
+  "workbench.startupEditor": "none",
+  "workbench.iconTheme": "vsc-jetbrains-icons-enhanced",
+  "liveServer.settings.donotShowInfoMsg": true,
+  "githubPullRequests.terminalLinksHandler": "github",
 }
