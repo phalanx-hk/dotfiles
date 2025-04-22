@@ -14,9 +14,11 @@ function addDockerRepo() {
 }
 
 function install_apt_package() {
-	add-apt-repository -y ppa:git-core/ppa
 	apt-get update 
 	apt-get upgrade -y
+	apt-get install -y software-properties-common
+	apt-get update 
+	add-apt-repository -y ppa:git-core/ppa
 	apt-get install -y \
 		apt-transport-https \
 		apt-utils \
