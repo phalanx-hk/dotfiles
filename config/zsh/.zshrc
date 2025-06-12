@@ -20,3 +20,7 @@ export SAVEHIST=10000
 
 # direnv
 eval "$(direnv hook zsh)"
+
+# mise
+eval "$(~/.local/bin/mise activate zsh)"
+eval "$(mise hook-env)"
