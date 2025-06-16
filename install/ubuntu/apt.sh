@@ -31,6 +31,7 @@ function install_apt_package() {
 		cmake \
 		curl \
 		git \
+		gh \
 		git-lfs \
 		gpg \
 		jq \

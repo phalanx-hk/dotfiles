@@ -33,7 +33,7 @@
   "window.title": " ",  // タイトルバーに表示されるテキストを空にする
   "window.commandCenter": false, // タイトルバー中央のコマンドランチャーを無効化
   "workbench.tree.indent": 24,  // エクスプローラのインデントを24pxに設定
-  "workbench.colorTheme": "Tomorrow Night Blue",
+  "workbench.colorTheme": "GitHub Dark Dimmed",
   "workbench.settings.useSplitJSON": false,
   "workbench.panel.defaultLocation": "bottom",
   "terminal.integrated.env.osx": {

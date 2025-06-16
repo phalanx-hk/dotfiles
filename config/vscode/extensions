@@ -71,7 +71,6 @@ viphakorn.mix-night-blue
 vscode-icons-team.vscode-icons
 innoverio.vscode-dbt-power-user
 ryu1kn.partial-diff
-saoudrizwan.claude-dev
 dsznajder.es7-react-js-snippets
 burkeholland.simple-react-snippets
 xabikos.JavaScriptSnippets
@@ -79,3 +78,5 @@ christian-kohler.npm-intellisense
 stylelint.vscode-stylelint
 biomejs.biome
 YoavBls.pretty-ts-errors
+Anthropic.claude-code
+saoudrizwan.claude-dev
