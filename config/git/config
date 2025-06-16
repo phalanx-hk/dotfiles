@@ -47,5 +47,5 @@
 	helper = 
 	helper = !/usr/bin/gh auth git-credential
 [commit]
-	gpgsign = true
+	gpgsign = false
 	
