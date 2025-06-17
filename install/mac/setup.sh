@@ -27,7 +27,9 @@ chmod +x "${SCRIPT}"
 bash "${SCRIPT}"
 
 # mise install
+# shellcheck source=/dev/null
 source ~/.zshenv
+# shellcheck source=/dev/null
 source ~/.zshrc
 mise install -y
 
