@@ -36,3 +36,6 @@ readonly SCRIPT="${ROOT_DIR}"/common/claude_code.sh
 echo "Executing ${SCRIPT}..."
 chmod +x "${SCRIPT}"
 bash "${SCRIPT}"
+
+# install battery
+curl -s https://raw.githubusercontent.com/actuallymentor/battery/main/setup.sh | bash
