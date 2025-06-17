@@ -14,16 +14,25 @@ bash "$CUR_DIR/homebrew.sh"
 bash "${ROOT_DIR}"/link.sh
 
 #### common tools ####
-readonly COMMON_DIR="${ROOT_DIR}"/common/
-for SCRIPT in "${COMMON_DIR}"/*.sh; do
-  if [ -f "$SCRIPT" ]; then
-    echo "Executing ${SCRIPT}..."
-    chmod +x "${SCRIPT}"
-    bash "${SCRIPT}"
-  else
-    echo "No shell scripts found in ${COMMON_DIR}."
-  fi
-done
+# install mise
+readonly SCRIPT="${ROOT_DIR}"/common/mise.sh
+echo "Executing ${SCRIPT}..."
+chmod +x "${SCRIPT}"
+bash "${SCRIPT}"
 
-### install mise dependencies ###
+# install vscode extensions
+readonly SCRIPT="${ROOT_DIR}"/common/vscode.sh
+echo "Executing ${SCRIPT}..."
+chmod +x "${SCRIPT}"
+bash "${SCRIPT}"
+
+# mise install
+source ~/.zshenv
+source ~/.zshrc
 mise install -y
+
+# install claude code
+readonly SCRIPT="${ROOT_DIR}"/common/claude_code.sh
+echo "Executing ${SCRIPT}..."
+chmod +x "${SCRIPT}"
+bash "${SCRIPT}"
