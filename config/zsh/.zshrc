@@ -1,9 +1,6 @@
 # starship
 eval "$(starship init zsh)"
 
-# sheldon
-eval "$(sheldon source)"
-
 setopt AUTO_CD
 setopt AUTO_PARAM_KEYS
 setopt nonomatch
@@ -18,8 +15,6 @@ export GPG_TTY=$(tty)
 export HISTSIZE=10000
 export SAVEHIST=10000
 
-# direnv
-eval "$(direnv hook zsh)"
 
 # mise
 eval "$(~/.local/bin/mise activate zsh)"
