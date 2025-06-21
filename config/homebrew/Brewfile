@@ -1,4 +1,3 @@
-tap "homebrew/bundle"
 tap "rcmdnk/file"
 brew "glib"
 brew "cairo"
