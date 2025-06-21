@@ -32,6 +32,8 @@ zsh << EOF
     source ~/.zshenv
     # shellcheck source=/dev/null
     source ~/.zshrc
+    export MISE_HTTP_TIMEOUT=120s
+    export MISE_FETCH_REMOTE_VERSIONS_TIMEOUT=30s
     mise install -y
 EOF
 
