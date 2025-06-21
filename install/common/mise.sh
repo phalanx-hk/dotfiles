@@ -4,6 +4,16 @@ set -Eeuxo pipefail
 
 function install_mise() {
     curl https://mise.run | sh
+
+    if [ -n "${GITHUB_ACTIONS-}" ]; then
+        echo "skip mise installation in CI."
+    else
+        zsh -c '
+            source ~/.zshenv
+            source ~/.zshrc
+            mise install -y
+        '
+    fi
 }
 
 function uninstall_mise() {
