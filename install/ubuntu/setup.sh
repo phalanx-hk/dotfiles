@@ -26,15 +26,6 @@ echo "Executing ${VSCODE_SCRIPT}..."
 chmod +x "${VSCODE_SCRIPT}"
 bash "${VSCODE_SCRIPT}"
 
-# mise install
-zsh << EOF
-    # shellcheck source=/dev/null
-    source ~/.zshenv
-    # shellcheck source=/dev/null
-    source ~/.zshrc
-    mise install -y
-EOF
-
 # install claude code
 readonly SCRIPT="${ROOT_DIR}"/common/claude_code.sh
 echo "Executing ${SCRIPT}..."
