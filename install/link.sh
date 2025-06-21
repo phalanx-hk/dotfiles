@@ -79,4 +79,4 @@ if [ ! -d "$CLAUDE_CODE_DIR" ]; then
 fi
 ln -sf "$REPO_DIR"/config/claude_code/CLAUDE.md "$CLAUDE_CODE_DIR"/CLAUDE.md
 ln -sf "$REPO_DIR"/config/claude_code/settings.json "$CLAUDE_CODE_DIR"/settings.json
-ln -s "$REPO_DIR"/config/claude_code/commands "$CLAUDE_CODE_DIR"/commands
+ln -s "$REPO_DIR"/config/claude_code/commands "$CLAUDE_CODE_DIR"

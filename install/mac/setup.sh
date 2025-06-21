@@ -15,16 +15,16 @@ bash "${ROOT_DIR}"/link.sh
 
 #### common tools ####
 # install mise
-readonly SCRIPT="${ROOT_DIR}"/common/mise.sh
-echo "Executing ${SCRIPT}..."
-chmod +x "${SCRIPT}"
-bash "${SCRIPT}"
+readonly MISE_SCRIPT="${ROOT_DIR}"/common/mise.sh
+echo "Executing ${MISE_SCRIPT}..."
+chmod +x "${MISE_SCRIPT}"
+bash "${MISE_SCRIPT}"
 
 # install vscode extensions
-readonly SCRIPT="${ROOT_DIR}"/common/vscode.sh
-echo "Executing ${SCRIPT}..."
-chmod +x "${SCRIPT}"
-bash "${SCRIPT}"
+readonly VSCODE_SCRIPT="${ROOT_DIR}"/common/vscode.sh
+echo "Executing ${VSCODE_SCRIPT}..."
+chmod +x "${VSCODE_SCRIPT}"
+bash "${VSCODE_SCRIPT}"
 
 # mise install
 # shellcheck source=/dev/null
