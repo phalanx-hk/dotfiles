@@ -14,6 +14,13 @@ bash "$CUR_DIR/homebrew.sh"
 bash "${ROOT_DIR}"/link.sh
 
 #### common tools ####
+
+# install sheldon
+readonly SHELDON_SCRIPT="${ROOT_DIR}"/common/sheldon.sh
+echo "Executing ${SHELDON_SCRIPT}..."
+chmod +x "${SHELDON_SCRIPT}"
+bash "${SHELDON_SCRIPT}"
+
 # install mise
 readonly MISE_SCRIPT="${ROOT_DIR}"/common/mise.sh
 echo "Executing ${MISE_SCRIPT}..."
