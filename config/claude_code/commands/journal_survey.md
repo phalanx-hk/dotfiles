@@ -16,9 +16,7 @@
 
 1. 引数として渡された論文URL（$ARGUMENTS）を検証します
 2. プロジェクトのルートディレクトリに `papers/` ディレクトリが存在しない場合は作成します
-3. 論文のウェブページから情報を取得します：
-   - arXivの場合: HTML版（https://arxiv.org/html/$ID）を優先し、利用できない場合はabstractページから情報を取得
-   - その他の学術サイト: PDFやHTMLから情報を抽出
+3. 論文URLから論文情報を取得します
 4. WebFetchツールを使用して論文の内容を取得・分析します
 5. 取得した情報を指定されたフォーマットに従って整理します
 6. 論文タイトルをファイル名として `papers/{論文タイトル}.md` ファイルを作成・保存します
@@ -44,17 +42,10 @@
 - ざっくりとどのような検証を行なったか
 ```
 
-## サポートする論文サイト
-
-- **arXiv**: https://arxiv.org/abs/XXXX.XXXXX または https://arxiv.org/html/XXXX.XXXXX
-- **IEEE Xplore**: https://ieeexplore.ieee.org/document/XXXXXXXXX
-- **ACM Digital Library**: https://dl.acm.org/doi/XXXXXXXXX
-- **その他の学術論文サイト**: PDFやHTMLが公開されている論文
-
 ## 処理フロー
 
 ### 1. URL検証と論文情報の特定
-- 提供されたURLから論文IDや論文情報を抽出
+- 提供されたURLから論文情報を抽出
 - arXivの場合はHTML版の利用可能性をチェック
 - 論文タイトルと著者情報を取得
 
@@ -76,17 +67,6 @@
 
 ## 特殊な処理
 
-### arXiv論文の処理
-- HTML版が利用可能な場合はそちらを優先使用
-- HTML版が利用できない場合はabstractページから基本情報を取得
-- 論文IDの正規化（v1, v2などのバージョン情報の処理）
-
-### その他の学術サイト
-- サイト固有のHTML構造を考慮した情報抽出
-- アクセス制限がある場合の適切なエラーハンドリング
-- DOI情報の活用
-
-## エラーハンドリング
 
 - **無効なURL**: 論文サイトとして認識できないURLの場合はエラーメッセージを表示
 - **アクセス不可**: 論文にアクセスできない場合（有料、制限等）の適切な処理
@@ -97,17 +77,7 @@
 
 ### arXiv論文の調査
 ```
-/research-survey https://arxiv.org/abs/2303.08774
-```
-
-### IEEE論文の調査
-```
-/research-survey https://ieeexplore.ieee.org/document/9879508
-```
-
-### HTML版arXiv論文の調査
-```
-/research-survey https://arxiv.org/html/2303.08774v2
+/research-survey https://arxiv.org/pdf/2303.08774
 ```
 
 ## 注意事項
