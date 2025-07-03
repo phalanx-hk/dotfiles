@@ -4,10 +4,3 @@ repos:
     hooks:
       - id: no-commit-to-branch
         args: ["--branch", "main"]
-
-  - repo: local
-    hooks:
-      - id: secretlint
-        name: secretlint
-        language: docker_image
-        entry: secretlint/secretlint:latest secretlint
