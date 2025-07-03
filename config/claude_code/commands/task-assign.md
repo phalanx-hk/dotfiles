@@ -7,20 +7,11 @@
 5. 修正内容を検証するためのテストを書き、実行する
 6. `/commit` コマンドを使用してコミットを作成する
 7. 変更内容をプッシュする
-8. `claude`ラベルが存在するか確認し、存在しない場合は新規作成する
-   - `gh label list` でラベル一覧を確認
-   - `claude`ラベルが存在しない場合は `gh label create "claude" --color "0052cc" --description "Created by Claude AI"` で作成
-9. PR（プルリクエスト）を作成する。PRには`claude`ラベルを付与する。PRのフォーマットは以下のようにしてください。
-
+8. `/pr`コマンドを使用してプルリクエストを作成する
+ - 参照したissueを紐づけるため、PRの本文に以下の内容を追加する
 ```
 ## Related issue
 参照したissueのリンクをここに書く
-
-## Background
-タスクの背景をここに書く
-
-## 変更内容
-変更内容をここに書く
 ```
 
 ※GitHub 関連の操作はすべて GitHub MCP を使用すること。
