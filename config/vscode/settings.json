@@ -100,5 +100,10 @@
   "liveServer.settings.donotShowInfoMsg": true,
   "githubPullRequests.terminalLinksHandler": "github",
   "remote.extensionKind": {"Anthropic.claude-code": ["ui", "workspace"]},
-  "diffEditor.renderSideBySide": true
+  "diffEditor.renderSideBySide": true,
+  "chat.instructionsFilesLocations": {
+    ".github/instructions": true,
+    "/var/folders/bh/1p01r8p92nv_4tdvr2k9_cpr0000gn/T/postman-http-request-post-response.instructions.md": true,
+    "/var/folders/bh/1p01r8p92nv_4tdvr2k9_cpr0000gn/T/postman-http-request-pre-request.instructions.md": true
+  }
 }
