@@ -24,7 +24,6 @@
     "*": true,
     "markdown": true
   },
-  "chat.experimental.detectParticipant.enabled": true,
   "html.format.wrapLineLength": 150,
   "remote.SSH.useLocalServer": false,
   "security.workspace.trust.untrustedFiles": "open",
