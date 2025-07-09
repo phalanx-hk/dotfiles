@@ -4,7 +4,7 @@ alias grep='rg'
 alias top='btm'
 alias act='act --container-architecture linux/amd64'
 alias claude='env CLAUDE_CONFIG_DIR=$HOME/.claude claude'
-alias claudevc='env CLAUDE_CONFIG_DIR=$HOME/.claude claude --allowedTools "EDIT"'
+alias claudevc='env CLAUDE_CONFIG_DIR=$HOME/.claude claude --allowedTools "EDIT,WRITE"'
 export GPG_TTY=$(tty)
 export HISTSIZE=100000
 export SAVEHIST=100000

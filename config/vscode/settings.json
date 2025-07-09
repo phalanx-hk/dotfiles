@@ -90,10 +90,6 @@
     "editor.selectionHighlightBackground": "#ce040470",
     "editor.selectionBackground": "#00ff0060"
   },
-  "remote.SSH.remotePlatform": {
-    "phalanx": "linux",
-    "dev-kitamura-gpu": "linux"
-  },
   "vsicons.dontShowNewVersionMessage": true,
   "workbench.startupEditor": "none",
   "workbench.iconTheme": "vsc-jetbrains-icons-enhanced",
