@@ -10,7 +10,6 @@
       "NotebookEdit",
       "WebFetch",
       "WebSearch",
-      "Write",
       "mcp__github__create_pull_request",
       "mcp__github__get_issue",
       "mcp__github__add_issue_comment",
