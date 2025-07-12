@@ -30,6 +30,7 @@ function install_apt_package() {
 		clang-format \
 		cmake \
 		curl \
+		fd-find \
 		git \
 		gh \
 		git-lfs \
