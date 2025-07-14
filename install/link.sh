@@ -78,5 +78,4 @@ if [ ! -d "$CLAUDE_CODE_DIR" ]; then
     mkdir -p "$CLAUDE_CODE_DIR"
 fi
 ln -sf "$REPO_DIR"/config/claude_code/CLAUDE.md "$CLAUDE_CODE_DIR"/CLAUDE.md
-ln -sf "$REPO_DIR"/config/claude_code/settings.json "$CLAUDE_CODE_DIR"/settings.json
 ln -sf "$REPO_DIR"/config/claude_code/commands "$CLAUDE_CODE_DIR"
