@@ -4,7 +4,7 @@ set -Eeuxo pipefail
 
 function install_sheldon() {
     curl --proto '=https' -fLsS https://rossmacarthur.github.io/install/crate.sh \
-        | bash -s -- --repo rossmacarthur/sheldon --to ~/.local/bin
+        | bash -s -- --repo rossmacarthur/sheldon --to ~/.local/bin --force
 }
 
 function uninstall_sheldon() {
@@ -18,8 +18,3 @@ function main() {
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
     main
 fi
-
-
-
-
-
