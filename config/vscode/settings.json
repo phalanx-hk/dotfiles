@@ -96,5 +96,6 @@
   "liveServer.settings.donotShowInfoMsg": true,
   "githubPullRequests.terminalLinksHandler": "github",
   "remote.extensionKind": {"Anthropic.claude-code": ["ui", "workspace"]},
-  "diffEditor.renderSideBySide": true
+  "diffEditor.renderSideBySide": true,
+  "biome.suggestInstallingGlobally": false
 }
