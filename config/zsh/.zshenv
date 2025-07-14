@@ -2,6 +2,7 @@ export LANG="en_US.UTF-8"
 unsetopt GLOBAL_RCS
 
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="/usr/local/bin:$PATH"
 
 # docker
 export PATH="$HOME/.docker/bin:$PATH"
