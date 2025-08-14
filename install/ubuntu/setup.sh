@@ -33,11 +33,5 @@ echo "Executing ${VSCODE_SCRIPT}..."
 chmod +x "${VSCODE_SCRIPT}"
 bash "${VSCODE_SCRIPT}"
 
-# install claude code
-readonly SCRIPT="${ROOT_DIR}"/common/claude_code.sh
-echo "Executing ${SCRIPT}..."
-chmod +x "${SCRIPT}"
-bash "${SCRIPT}"
-
 # install battery
 curl -s https://raw.githubusercontent.com/actuallymentor/battery/main/setup.sh | bash

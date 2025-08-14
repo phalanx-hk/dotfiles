@@ -25,6 +25,8 @@ tflint = "latest"
 packer = "latest"
 gcloud = "latest"
 tilt = "0.34.0"
+claude-code = "1.0.31"
+gemini-cli = "latest"
 
 [settings]
 idiomatic_version_file_enable_tools = ["python"]
