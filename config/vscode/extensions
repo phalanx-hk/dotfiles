@@ -72,4 +72,5 @@ stylelint.vscode-stylelint
 biomejs.biome
 YoavBls.pretty-ts-errors
 Anthropic.claude-code
-saoudrizwan.claude-dev
+svelte.svelte-vscode
+bradlc.vscode-tailwindcss
