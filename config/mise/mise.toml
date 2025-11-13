@@ -1,16 +1,15 @@
 [tools]
-rust = "1.81.0"
-python = ["3.12.0"]
+python = ["3.12.0", "3.13.0", "3.14.0"]
+rust = "latest"
 node = "latest"
-go = "1.23.1"
-terraform = "1.11.4"
-bun = "1.1.37"
+go = "latest"
+terraform = "latest"
+bun = "latest"
 
-trivy = "0.55.2"
+trivy = "latest"
 uv = "latest"
 act = "latest"
 actionlint = "latest"
-1password-cli = "latest"
 pre-commit = "latest"
 bat = "latest"
 bottom = "latest"
@@ -24,9 +23,16 @@ starship = "latest"
 tflint = "latest"
 packer = "latest"
 gcloud = "latest"
-tilt = "0.34.0"
-claude-code = "1.0.31"
+tilt = "latest"
+claude-code = "latest"
 gemini-cli = "latest"
+
+"npm:@openai/codex" = "latest"
+"npm:@sasazame/ccresume" = "latest"
+"npm:ccusage" = "latest"
 
 [settings]
 idiomatic_version_file_enable_tools = ["python"]
+
+[settings.npm]
+bun = true
