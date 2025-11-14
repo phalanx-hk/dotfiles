@@ -32,7 +32,7 @@
   "window.title": " ",  // タイトルバーに表示されるテキストを空にする
   "window.commandCenter": false, // タイトルバー中央のコマンドランチャーを無効化
   "workbench.tree.indent": 24,  // エクスプローラのインデントを24pxに設定
-  "workbench.colorTheme": "GitHub Dark Dimmed",
+  "workbench.colorTheme": "GitHub Dark Colorblind (Beta)",
   "workbench.settings.useSplitJSON": false,
   "workbench.panel.defaultLocation": "bottom",
   "terminal.integrated.env.osx": {
@@ -124,20 +124,27 @@
   "diffEditor.renderSideBySide": true,
   "biome.suggestInstallingGlobally": false,
   "auto-close-tag.activationOnLanguage": [
-        "xml",
-        "php",
-        "blade",
-        "ejs",
-        "jinja",
-        "plaintext",
-        "markdown",
-        "vue",
-        "liquid",
-        "erb",
-        "lang-cfml",
-        "cfml",
-        "HTML (EEx)",
-        "HTML (Eex)",
-        "plist"
-    ]
+    "xml",
+    "php",
+    "blade",
+    "ejs",
+    "jinja",
+    "plaintext",
+    "markdown",
+    "vue",
+    "liquid",
+    "erb",
+    "lang-cfml",
+    "cfml",
+    "HTML (EEx)",
+    "HTML (Eex)",
+    "plist"
+  ],
+  "github.copilot.chat.commitMessageGeneration.instructions": [
+    {
+      "text": "Write an English commit message in one line."
+    }
+  ],
+  "svelte.enable-ts-plugin": true,
+  "diffEditor.ignoreTrimWhitespace": false
 }
