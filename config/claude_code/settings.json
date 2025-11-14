@@ -10,6 +10,7 @@
       "NotebookEdit",
       "WebFetch",
       "WebSearch",
+      "SlashCommand",
       "mcp__github__create_pull_request",
       "mcp__github__get_issue",
       "mcp__github__add_issue_comment",
@@ -30,7 +31,7 @@
       "Bash(kubectl apply:*)",
       "Bash(kubectl delete:*)",
       "Bash(git push --force:*)",
-      "Bash(git push origin main:*)"      
+      "Bash(git push origin main:*)"
     ]
   }
 }
