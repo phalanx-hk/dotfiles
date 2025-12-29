@@ -1,8 +1,17 @@
 {
-  "memory": "auto",
-  "editorMode": "vscode",
-  "respectGitignore": true,
-  "detectSecrets": true,
+  "model": "opusplan",
+  "env": {
+    "DISABLE_AUTOUPDATER": "1",
+    "DISABLE_BUG_COMMAND": "true",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "claude-opus-4-5@20251101",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "claude-sonnet-4-5@20250929"
+  },
+  "alwaysThinkingEnabled": true,
+  "includeCoAuthoredBy": false,
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline.sh"
+  },
   "permissions": {
     "allow": [
       "Bash",
@@ -11,10 +20,7 @@
       "WebFetch",
       "WebSearch",
       "SlashCommand",
-      "mcp__github__create_pull_request",
-      "mcp__github__get_issue",
-      "mcp__github__add_issue_comment",
-      "mcp__github__get_issue_comments"
+      "Skill"
     ],
     "deny": [
       "Bash(rm:*)",
@@ -22,7 +28,6 @@
       "Bash(chmod 777:*)",
       "Bash(chown root:*)",
       "Bash(while true:*)",
-      "Bash(for ((;;):*)",
       "Bash(terraform destroy:*)",
       "Bash(terraform apply:*)",
       "Bash(gcloud:*)",
@@ -31,7 +36,10 @@
       "Bash(kubectl apply:*)",
       "Bash(kubectl delete:*)",
       "Bash(git push --force:*)",
-      "Bash(git push origin main:*)"
+      "Bash(git push origin main:*)",
+      "NotebookEdit",
+      "NotebookRead",
+      "WebSearch"
     ]
   }
 }
