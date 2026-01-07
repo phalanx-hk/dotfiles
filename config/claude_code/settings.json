@@ -10,10 +10,9 @@
     "allow": [
       "Bash",
       "MultiEdit",
-      "NotebookEdit",
       "WebFetch",
-      "WebSearch",
       "SlashCommand",
+      "WebSearch",
       "Skill"
     ],
     "deny": [
@@ -33,7 +32,6 @@
       "Bash(git push origin main:*)",
       "NotebookEdit",
       "NotebookRead",
-      "WebSearch"
     ]
   },
   "model": "opusplan",
@@ -44,8 +42,32 @@
   },
   "enabledPlugins": {
     "frontend-design@claude-plugins-official": true,
-    "code-review@claude-plugins-official": true,
-    "pr-review-toolkit@claude-plugins-official": true,
-    "security-guidance@claude-plugins-official": true
+    "dig@kuu-marketplace": true
+
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -r '.tool_input.file_path | select(endswith(\".py\"))' | xargs -r uvx ruff format"
+          },
+          {
+            "type": "command",
+            "command": "jq -r '.tool_input.file_path | select(endswith(\".py\"))' | xargs -r uvx ruff check --fix"
+          },
+          {
+            "type": "command",
+            "command": "jq -r '.tool_input.file_path | select(endswith(\".py\"))' | xargs -r uvx mypy"
+          },
+          {
+            "type": "command",
+            "command": "jq -r '.tool_input.file_path | select(test(\"\\\\.(css|js|jsx|ts|tsx|svelte)$\"))' | xargs -r bunx --bun biome check --write"
+          }
+        ]
+      }
+    ]
   }
 }
