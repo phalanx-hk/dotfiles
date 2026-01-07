@@ -26,8 +26,9 @@ gcloud = "latest"
 tilt = "latest"
 claude-code = "latest"
 gemini-cli = "latest"
+ghq = "latest"
+copier = "latest"
 
-"npm:@openai/codex" = "latest"
 "npm:@sasazame/ccresume" = "latest"
 "npm:ccusage" = "latest"
 

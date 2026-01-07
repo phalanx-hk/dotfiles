@@ -1,20 +1,19 @@
 {
-  "memory": "auto",
-  "editorMode": "vscode",
-  "respectGitignore": true,
-  "detectSecrets": true,
+  "env": {
+    "DISABLE_AUTOUPDATER": "1",
+    "DISABLE_BUG_COMMAND": "true",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "claude-opus-4-5@20251101",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "claude-sonnet-4-5@20250929"
+  },
+  "includeCoAuthoredBy": false,
   "permissions": {
     "allow": [
       "Bash",
       "MultiEdit",
-      "NotebookEdit",
       "WebFetch",
-      "WebSearch",
       "SlashCommand",
-      "mcp__github__create_pull_request",
-      "mcp__github__get_issue",
-      "mcp__github__add_issue_comment",
-      "mcp__github__get_issue_comments"
+      "WebSearch",
+      "Skill"
     ],
     "deny": [
       "Bash(rm:*)",
@@ -22,7 +21,6 @@
       "Bash(chmod 777:*)",
       "Bash(chown root:*)",
       "Bash(while true:*)",
-      "Bash(for ((;;):*)",
       "Bash(terraform destroy:*)",
       "Bash(terraform apply:*)",
       "Bash(gcloud:*)",
@@ -31,7 +29,45 @@
       "Bash(kubectl apply:*)",
       "Bash(kubectl delete:*)",
       "Bash(git push --force:*)",
-      "Bash(git push origin main:*)"
+      "Bash(git push origin main:*)",
+      "NotebookEdit",
+      "NotebookRead",
+    ]
+  },
+  "model": "opusplan",
+  "alwaysThinkingEnabled": true,
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline.sh"
+  },
+  "enabledPlugins": {
+    "frontend-design@claude-plugins-official": true,
+    "dig@kuu-marketplace": true
+
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -r '.tool_input.file_path | select(endswith(\".py\"))' | xargs -r uvx ruff format"
+          },
+          {
+            "type": "command",
+            "command": "jq -r '.tool_input.file_path | select(endswith(\".py\"))' | xargs -r uvx ruff check --fix"
+          },
+          {
+            "type": "command",
+            "command": "jq -r '.tool_input.file_path | select(endswith(\".py\"))' | xargs -r uvx mypy"
+          },
+          {
+            "type": "command",
+            "command": "jq -r '.tool_input.file_path | select(test(\"\\\\.(css|js|jsx|ts|tsx|svelte)$\"))' | xargs -r bunx --bun biome check --write"
+          }
+        ]
+      }
     ]
   }
 }
