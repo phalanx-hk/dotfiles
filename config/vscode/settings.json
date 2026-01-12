@@ -39,7 +39,8 @@
     "CW_NEW_SESSION": "1"
   },
   "git.enableSmartCommit": true,
-  "terminal.integrated.fontFamily": "Hack Nerd Font",
+  "editor.fontFamily": "Fira Code, Consolas, 'Courier New', monospace",
+  "editor.fontLigatures": true,
   "terminal.integrated.defaultProfile.osx": "zsh",
   "terminal.integrated.defaultProfile.linux": "zsh",
   "[yaml]": {
@@ -146,5 +147,8 @@
     }
   ],
   "svelte.enable-ts-plugin": true,
-  "diffEditor.ignoreTrimWhitespace": false
+  "diffEditor.ignoreTrimWhitespace": false,
+  "terminal.integrated.suggest.cdPath": "off",
+  "terminal.integrated.suggest.enabled": false,
+  "workbench.secondarySideBar.defaultVisibility": "hidden"
 }
