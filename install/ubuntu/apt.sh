@@ -14,10 +14,10 @@ function addDockerRepo() {
 }
 
 function install_apt_package() {
-	apt-get update 
+	apt-get update
 	apt-get upgrade -y
 	apt-get install -y software-properties-common
-	apt-get update 
+	apt-get update
 	add-apt-repository -y ppa:git-core/ppa
 	apt-get install -y \
 		apt-transport-https \
@@ -48,7 +48,8 @@ function install_apt_package() {
 		unzip \
 		wget \
 		zip \
-		zsh
+		zsh \
+		fonts-firacode
 	if ! command -v docker &> /dev/null; then
 		addDockerRepo
 		apt-get update
