@@ -1,0 +1,18 @@
+shell-integration = zsh
+
+maximize = true
+theme = TokyoNight
+
+font-thicken = true
+font-family = Fira Code Boldfdfdd
+
+macos-titlebar-style = tabs
+
+adjust-cell-height = 2
+
+mouse-hide-while-typing = true
+mouse-scroll-multiplier = 2
+
+cursor-opacity = 0.7
+cursor-style = block
+cursor-style-blink = false
