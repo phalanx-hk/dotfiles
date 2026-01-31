@@ -150,5 +150,6 @@
   "diffEditor.ignoreTrimWhitespace": false,
   "terminal.integrated.suggest.cdPath": "off",
   "terminal.integrated.suggest.enabled": false,
-  "workbench.secondarySideBar.defaultVisibility": "hidden"
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
+  "terminal.external.osxExec": "Ghostty.app"
 }

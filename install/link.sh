@@ -83,3 +83,26 @@ ln -sf "$REPO_DIR"/config/claude_code/agents "$CLAUDE_CODE_DIR"
 ln -sf "$REPO_DIR"/config/claude_code/commands "$CLAUDE_CODE_DIR"
 ln -sf "$REPO_DIR"/config/claude_code/rules "$CLAUDE_CODE_DIR"
 ln -sf "$REPO_DIR"/config/claude_code/skills "$CLAUDE_CODE_DIR"
+chmod +x "$CLAUDE_CODE_DIR"/statusline.sh
+
+
+### ghostty ###
+readonly GHOSTTY_CONFIG_DIR="$HOME/.config/ghostty"
+if [ ! -d "$GHOSTTY_CONFIG_DIR" ]; then
+    mkdir -p "$GHOSTTY_CONFIG_DIR"
+fi
+ln -sf "$REPO_DIR"/config/ghostty/config "$GHOSTTY_CONFIG_DIR"/config
+
+### gwq ###
+readonly GWQ_CONFIG_DIR="$HOME/.config/gwq"
+if [ ! -d "$GWQ_CONFIG_DIR" ]; then
+    mkdir -p "$GWQ_CONFIG_DIR"
+fi
+ln -sf "$REPO_DIR"/config/gwq/config.toml "$GWQ_CONFIG_DIR"/config.toml
+
+### helix ###
+readonly HELIX_CONFIG_DIR="$HOME/.config/helix"
+if [ ! -d "$HELIX_CONFIG_DIR" ]; then
+    mkdir -p "$HELIX_CONFIG_DIR"
+fi
+ln -sf "$REPO_DIR"/config/helix/config.toml "$HELIX_CONFIG_DIR"/config.toml

@@ -1,0 +1,49 @@
+shell-integration = zsh
+
+font-size = 12
+
+maximize = true
+theme = TokyoNight
+
+font-thicken = true
+font-family = Fira Code Boldfdfdd
+
+macos-titlebar-style = transparent
+macos-window-shadow = true
+
+adjust-cell-height = 10%
+
+mouse-hide-while-typing = true
+mouse-scroll-multiplier = 2
+
+cursor-opacity = 0.7
+cursor-style = block
+cursor-style-blink = false
+
+window-padding-x = 10
+window-padding-y = 10
+window-padding-balance = true
+
+# 選択しただけでコピー
+copy-on-select = true
+
+# クリップボードの読み書きを許可
+clipboard-read = allow
+clipboard-write = allow
+
+
+ # --- キーバインド設定（画面分割） ---
+#  Cmd+Enter で「下に」分割
+keybind = cmd+enter=new_split:down
+# Cmd+Shift+Enter で「右に」分割
+keybind = cmd+shift+enter=new_split:right
+# Cmd + 矢印キー で分割した画面を「移動」
+keybind = cmd+left=goto_split:left
+keybind = cmd+right=goto_split:right
+keybind = cmd+up=goto_split:top
+keybind = cmd+down=goto_split:bottom
+# Cmd + Shift + 矢印キー でサイズを「調整」
+keybind = cmd+shift+left=resize_split:left,20
+keybind = cmd+shift+right=resize_split:right,20
+keybind = cmd+shift+up=resize_split:up,20
+keybind = cmd+shift+down=resize_split:down,20
