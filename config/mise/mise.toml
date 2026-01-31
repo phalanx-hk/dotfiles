@@ -28,12 +28,26 @@ claude-code = "latest"
 gemini-cli = "latest"
 ghq = "latest"
 copier = "latest"
+fzf ="latest"
+"github:trasta298/keifu" = "latest"
+atuin = "latest"
+zoxide = "latest"
+helix = "latest"
 
 "npm:@sasazame/ccresume" = "latest"
 "npm:ccusage" = "latest"
+"npm:agent-browser" = "latest"
+"npm:difit" = "latest"
+"npm:svelte-language-server" = "latest"
 
 [settings]
 idiomatic_version_file_enable_tools = ["python"]
 
 [settings.npm]
 bun = true
+
+[tasks.go-tools]
+description = "Install Go CLI tools"
+run = [
+    "go install github.com/d-kuro/gwq/cmd/gwq@latest"
+]
