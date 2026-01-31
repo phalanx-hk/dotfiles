@@ -8,17 +8,17 @@
     signingkey = 0769CE1DDF2E8DDA
 
 [core]
-    pager = delta
-
-[init]
-    defaultBranch = main
+    pager = delta --plus-color="#012800" --minus-color="#340001" --theme='Monokai Extended'
 
 [interactive]
     diffFilter = delta --color-only
 
+[init]
+    defaultBranch = main
+
 [delta]
-    navigate = true    
-    light = false 
+    navigate = true
+    light = false
     side-by-side = true
     line-numbers = true
 
@@ -47,3 +47,6 @@
 
 [credential "https://gist.github.com"]
 	helper = "!gh auth git-credential"
+
+[ghq]
+ root = "~/ghq"
