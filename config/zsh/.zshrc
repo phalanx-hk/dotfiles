@@ -29,6 +29,7 @@ eval "$(mise hook-env)"
 eval "$(sheldon source)"
 eval "$(atuin init zsh)"
 eval "$(zoxide init zsh --cmd cd)"
+eval "$(direnv hook zsh)"
 
 gclaude() {
     local target_dir="${1:-$(pwd)}"

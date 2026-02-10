@@ -22,6 +22,7 @@ brew "shellcheck"
 brew "tealdeer"
 brew "tree"
 brew "rcmdnk/file/brew-file"
+brew "direnv"
 brew "ekphos"
 
 cask"orbstack"
