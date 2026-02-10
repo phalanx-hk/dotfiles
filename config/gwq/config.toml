@@ -19,7 +19,7 @@ validate_branch_exists = true
 preview = true
 
 [naming]
-template = '{{.Host}}/{{.Owner}}/{{.Repository}}/{{.Branch}}'
+template = '{{.Host}}/{{.Owner}}/{{.Repository}}={{.Branch}}'
 
 [naming.sanitize_chars]
 '/' = '-'
