@@ -24,6 +24,7 @@ brew "tree"
 brew "rcmdnk/file/brew-file"
 brew "direnv"
 brew "ekphos"
+brew "pure"
 
 cask"orbstack"
 cask "1password"
