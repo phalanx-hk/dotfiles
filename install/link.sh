@@ -46,8 +46,6 @@ ln -sf "$REPO_DIR"/config/op/plugins.sh "$CONFIG_DIR"/op/plugins.sh
 mkdir -p "$CONFIG_DIR"/sheldon
 ln -sf "$REPO_DIR"/config/sheldon/plugins.toml ~/.config/sheldon/plugins.toml
 
-### starship ###
-ln -sf "$REPO_DIR"/config/starship/starship.toml "$CONFIG_DIR"/starship.toml
 
 ### vscode ###
 if [ "$(uname -s)" == "Darwin" ]; then

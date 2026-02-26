@@ -1,5 +1,9 @@
 HISTFILE="${ZDOTDIR:-$HOME}/.zsh_history"
 
+fpath+=("$(brew --prefix)/share/zsh/site-functions")
+autoload -U promptinit; promptinit
+prompt pure
+
 alias cat='bat'
 alias ls='eza  --icons --long --time-style=long-iso --header --git-ignore'
 alias grep='rg'
@@ -23,7 +27,6 @@ autoload -Uz compinit
 compinit
 
 # eval
-eval "$(starship init zsh)"
 eval "$(~/.local/bin/mise activate zsh)"
 eval "$(mise hook-env)"
 eval "$(sheldon source)"
