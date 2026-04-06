@@ -39,6 +39,7 @@ helix = "latest"
 "npm:agent-browser" = "latest"
 "npm:difit" = "latest"
 "npm:svelte-language-server" = "latest"
+"npm:@pranshuparmar/witr" = "latest"
 
 [settings]
 idiomatic_version_file_enable_tools = ["python"]
