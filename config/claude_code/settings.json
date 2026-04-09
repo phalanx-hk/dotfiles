@@ -2,8 +2,7 @@
   "env": {
     "DISABLE_AUTOUPDATER": "1",
     "DISABLE_BUG_COMMAND": "true",
-    "ANTHROPIC_DEFAULT_OPUS_MODEL": "claude-opus-4-5@20251101",
-    "ANTHROPIC_DEFAULT_SONNET_MODEL": "claude-sonnet-4-5@20250929"
+    "effort": "medium"
   },
   "includeCoAuthoredBy": false,
   "permissions": {
@@ -34,26 +33,11 @@
       "NotebookRead"
     ]
   },
-  "model": "opusplan",
-  "alwaysThinkingEnabled": true,
-  "statusLine": {
-    "type": "command",
-    "command": "~/.claude/statusline.sh"
-  },
-  "enabledPlugins": {
-    "frontend-design@claude-plugins-official": true,
-    "dig@kuu-marketplace": true
-
-  },
   "hooks": {
     "PostToolUse": [
       {
         "matcher": "Write|Edit|MultiEdit",
         "hooks": [
-          {
-            "type": "command",
-            "command": "jq -r '.tool_input.file_path | select(endswith(\".py\"))' | xargs -r uvx ruff format"
-          },
           {
             "type": "command",
             "command": "jq -r '.tool_input.file_path | select(endswith(\".py\"))' | xargs -r uvx ruff check --fix"
@@ -69,5 +53,16 @@
         ]
       }
     ]
-  }
+  },
+  "showClearContextOnPlanAccept": true,
+  "model": "opusplan",
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline.sh"
+  },
+  "enabledPlugins": {
+    "frontend-design@claude-plugins-official": true,
+    "dig@kuu-marketplace": true
+  },
+  "alwaysThinkingEnabled": true
 }
