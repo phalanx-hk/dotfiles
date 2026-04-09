@@ -25,7 +25,6 @@ packer = "latest"
 gcloud = "latest"
 tilt = "latest"
 "npm:@anthropic-ai/claude-code" = "latest"
-gemini-cli = "latest"
 ghq = "latest"
 copier = "latest"
 fzf ="latest"
@@ -43,6 +42,7 @@ helix = "latest"
 
 [settings]
 idiomatic_version_file_enable_tools = ["python"]
+install_before = "7d"
 
 [settings.npm]
 bun = true
