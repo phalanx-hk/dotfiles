@@ -1,7 +1,11 @@
 HISTFILE="${ZDOTDIR:-$HOME}/.zsh_history"
 
-fpath+=("$(brew --prefix)/share/zsh/site-functions")
-autoload -U promptinit; promptinit
+if [[ "$OSTYPE" == darwin* ]]; then
+    fpath+=("$(brew --prefix)/share/zsh/site-functions")
+else
+    fpath=(~/.zsh/pure $fpath)
+fi
+autoload -Uz promptinit; promptinit
 prompt pure
 
 alias cat='bat'
