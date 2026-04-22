@@ -1,32 +1,35 @@
 shell-integration = zsh
 
-font-size = 12
-
 maximize = true
-theme = TokyoNight
+theme = GitHub-Dark-Default
 
+# --- フォント設定 ---
+font-size = 12
 font-thicken = true
-font-family = Fira Code Boldfdfdd
+font-family = Fira Code
+font-style = Regular
+font-feature = +calt
+font-feature = +liga
 
-macos-titlebar-style = transparent
-macos-window-shadow = true
-
-adjust-cell-height = 10%
-
-mouse-hide-while-typing = true
-mouse-scroll-multiplier = 2
-
-cursor-opacity = 0.7
+# --- カーソル ---
+cursor-color = #ff2c6d
 cursor-style = block
-cursor-style-blink = false
+cursor-style-blink = true
 
+# -- ウインドウ ---
 window-padding-x = 10
 window-padding-y = 10
 window-padding-balance = true
 
+
+auto-update = download
+macos-titlebar-style = transparent
+macos-window-shadow = true
+adjust-cell-height = 10%
+mouse-hide-while-typing = true
+mouse-scroll-multiplier = 2
 # 選択しただけでコピー
 copy-on-select = true
-
 # クリップボードの読み書きを許可
 clipboard-read = allow
 clipboard-write = allow
@@ -36,6 +39,8 @@ clipboard-write = allow
 #  Cmd+Enter で「下に」分割
 keybind = cmd+enter=new_split:down
 # Cmd+Shift+Enter で「右に」分割
+# デフォルトの「Toggle split zoom」バインドを解除してから上書き
+keybind = cmd+shift+enter=unbind
 keybind = cmd+shift+enter=new_split:right
 # Cmd + 矢印キー で分割した画面を「移動」
 keybind = cmd+left=goto_split:left
@@ -47,3 +52,4 @@ keybind = cmd+shift+left=resize_split:left,20
 keybind = cmd+shift+right=resize_split:right,20
 keybind = cmd+shift+up=resize_split:up,20
 keybind = cmd+shift+down=resize_split:down,20
+keybind = shift+enter=text:\x1b\r

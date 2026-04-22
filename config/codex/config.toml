@@ -1,0 +1,37 @@
+# OpenAI Codex CLI configuration
+# Reference: https://developers.openai.com/codex/config-reference
+
+model = "gpt-5.4"
+model_reasoning_effort = "medium"
+# on-request: only dangerous operations require approval; balances safety and productivity
+approval_policy = "on-request"
+sandbox_mode = "workspace-write"
+
+[sandbox_workspace_write]
+# Disable network access inside sandbox by default; enable per-profile when needed
+network_access = false
+
+[tui]
+status_line = ["model-with-reasoning", "current-dir", "context-usage", "five-hour-limit", "weekly-limit"]
+
+# macOS only: plays a sound on task completion
+notify = ["bash", "-lc", "afplay /System/Library/Sounds/Ping.aiff"]
+
+# [mcp_servers]
+# [mcp_servers.example]
+# command = "npx"
+# args = ["-y", "@example/mcp-server"]
+
+[profiles.readonly]
+approval_policy = "untrusted"
+sandbox_mode = "read-only"
+
+[profiles.build]
+model_reasoning_effort = "high"
+
+[profiles.build.sandbox_workspace_write]
+# Enable network access for package installs (e.g. npm install, cargo build)
+network_access = true
+
+[projects."/Users/kitamura/dotfiles"]
+trust_level = "trusted"
