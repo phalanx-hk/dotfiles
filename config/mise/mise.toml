@@ -32,6 +32,7 @@ fzf ="latest"
 atuin = "latest"
 zoxide = "latest"
 helix = "latest"
+codex = "latest"
 
 "npm:@sasazame/ccresume" = "latest"
 "npm:ccusage" = "latest"

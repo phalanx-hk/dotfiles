@@ -76,13 +76,24 @@ if [ ! -d "$CLAUDE_CODE_DIR" ]; then
     mkdir -p "$CLAUDE_CODE_DIR"
 fi
 ln -sf "$REPO_DIR"/config/claude_code/CLAUDE.md "$CLAUDE_CODE_DIR"/CLAUDE.md
+ln -sf "$REPO_DIR"/config/claude_code/settings.json "$CLAUDE_CODE_DIR"/settings.json
 ln -sf "$REPO_DIR"/config/claude_code/statusline.py "$CLAUDE_CODE_DIR/statusline.py"
 ln -sf "$REPO_DIR"/config/claude_code/agents "$CLAUDE_CODE_DIR"
 ln -sf "$REPO_DIR"/config/claude_code/commands "$CLAUDE_CODE_DIR"
 ln -sf "$REPO_DIR"/config/claude_code/rules "$CLAUDE_CODE_DIR"
 ln -sf "$REPO_DIR"/config/claude_code/skills "$CLAUDE_CODE_DIR"
+ln -sf "$REPO_DIR"/config/claude_code/hooks "$CLAUDE_CODE_DIR"
 chmod +x "$CLAUDE_CODE_DIR"/statusline.py
+chmod +x "$CLAUDE_CODE_DIR"/hooks/cmux-notify.sh
 
+
+### codex ###
+readonly CODEX_DIR="$HOME/.codex"
+if [ ! -d "$CODEX_DIR" ]; then
+    mkdir -p "$CODEX_DIR"
+fi
+ln -sf "$REPO_DIR"/config/codex/config.toml "$CODEX_DIR"/config.toml
+ln -sf "$REPO_DIR"/config/codex/AGENTS.md "$CODEX_DIR"/AGENTS.md
 
 ### ghostty ###
 readonly GHOSTTY_CONFIG_DIR="$HOME/.config/ghostty"

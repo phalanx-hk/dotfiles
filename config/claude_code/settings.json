@@ -31,6 +31,9 @@
       "Bash(git push origin main:*)",
       "NotebookEdit",
       "NotebookRead"
+    ],
+    "additionalDirectories": [
+      "~/Google Drive/マイドライブ/Obsidian Vault/"
     ]
   },
   "hooks": {
@@ -51,6 +54,26 @@
             "command": "jq -r '.tool_input.file_path | select(test(\"\\\\.(css|js|jsx|ts|tsx|svelte)$\"))' | xargs -r bunx --bun biome check --write"
           }
         ]
+      },
+      {
+        "matcher": "Task",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/cmux-notify.sh"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/cmux-notify.sh"
+          }
+        ]
       }
     ]
   },
@@ -58,7 +81,7 @@
   "model": "opusplan",
   "statusLine": {
     "type": "command",
-    "command": "~/.claude/statusline.sh"
+    "command": "~/.claude/statusline.py"
   },
   "enabledPlugins": {
     "frontend-design@claude-plugins-official": true,
