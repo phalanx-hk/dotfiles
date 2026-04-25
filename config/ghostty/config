@@ -1,7 +1,7 @@
 shell-integration = zsh
 
 maximize = true
-theme = GitHub-Dark-Default
+theme = GitHub-Dark-Colorbind
 
 # --- フォント設定 ---
 font-size = 12
