@@ -2,7 +2,7 @@
   "env": {
     "DISABLE_AUTOUPDATER": "1",
     "DISABLE_BUG_COMMAND": "true",
-    "effort": "medium"
+    "effort": "xhigh"
   },
   "includeCoAuthoredBy": false,
   "permissions": {
@@ -32,10 +32,12 @@
       "NotebookRead"
     ],
     "additionalDirectories": [
-      "~/Google Drive/マイドライブ/Obsidian Vault/"
+      "~/Google Drive/マイドライブ/Obsidian Vault/",
+      "~/.claude/"
     ],
-    "defaultMode": "plan"
+    "defaultMode": "auto"
   },
+  "model": "opus",
   "hooks": {
     "PostToolUse": [
       {
@@ -77,15 +79,14 @@
       }
     ]
   },
-  "showClearContextOnPlanAccept": true,
-  "model": "opusplan",
   "statusLine": {
     "type": "command",
     "command": "~/.claude/statusline.py"
   },
   "enabledPlugins": {
-    "frontend-design@claude-plugins-official": true,
-    "dig@kuu-marketplace": true
+    "frontend-design@claude-plugins-official": true
   },
-  "alwaysThinkingEnabled": true
+  "alwaysThinkingEnabled": true,
+  "showClearContextOnPlanAccept": true,
+  "skipAutoPermissionPrompt": true
 }
