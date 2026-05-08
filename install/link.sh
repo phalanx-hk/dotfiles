@@ -81,8 +81,13 @@ ln -sf "$REPO_DIR"/config/claude_code/statusline.py "$CLAUDE_CODE_DIR/statusline
 ln -sf "$REPO_DIR"/config/claude_code/agents "$CLAUDE_CODE_DIR"
 ln -sf "$REPO_DIR"/config/claude_code/commands "$CLAUDE_CODE_DIR"
 ln -sf "$REPO_DIR"/config/claude_code/rules "$CLAUDE_CODE_DIR"
-ln -sf "$REPO_DIR"/config/claude_code/skills "$CLAUDE_CODE_DIR"
 ln -sf "$REPO_DIR"/config/claude_code/hooks "$CLAUDE_CODE_DIR"
+
+mkdir -p "$CLAUDE_CODE_DIR/skills"
+for skill in "$REPO_DIR"/config/claude_code/skills/*; do
+    [ -e "$skill" ] || continue
+    ln -sfn "$skill" "$CLAUDE_CODE_DIR/skills/$(basename "$skill")"
+done
 chmod +x "$CLAUDE_CODE_DIR"/statusline.py
 chmod +x "$CLAUDE_CODE_DIR"/hooks/cmux-notify.sh
 
