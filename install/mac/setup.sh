@@ -33,5 +33,11 @@ echo "Executing ${VSCODE_SCRIPT}..."
 chmod +x "${VSCODE_SCRIPT}"
 bash "${VSCODE_SCRIPT}"
 
+# install agent skills
+readonly SKILLS_SCRIPT="${ROOT_DIR}"/common/skills.sh
+echo "Executing ${SKILLS_SCRIPT}..."
+chmod +x "${SKILLS_SCRIPT}"
+bash "${SKILLS_SCRIPT}"
+
 # install battery
 curl -s https://raw.githubusercontent.com/actuallymentor/battery/main/setup.sh | bash
