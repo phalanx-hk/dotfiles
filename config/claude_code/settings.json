@@ -11,7 +11,10 @@
       "MultiEdit",
       "WebFetch",
       "WebSearch",
-      "Skill"
+      "Skill",
+      "Read(~/.claude/skills/**)",
+      "Read(~/.agents/skills/**)",
+      "Read(~/ghq/github.com/phalanx-hk/dotfiles/config/claude_code/skills/**)"
     ],
     "deny": [
       "Bash(rm:*)",

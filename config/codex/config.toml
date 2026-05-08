@@ -17,3 +17,5 @@ notify = ["bash", "-lc", "afplay /System/Library/Sounds/Ping.aiff"]
 [profiles.readonly]
 approval_policy = "untrusted"
 sandbox_mode = "read-only"
+[features]
+goals = true

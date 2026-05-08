@@ -33,6 +33,7 @@ zoxide = "latest"
 helix = "latest"
 codex = "latest"
 claude = "latest"
+k6 = "latest"
 
 "npm:@sasazame/ccresume" = "latest"
 "npm:ccusage" = "latest"
@@ -43,7 +44,7 @@ claude = "latest"
 
 [settings]
 idiomatic_version_file_enable_tools = ["python"]
-install_before = "7d"
+install_before = "3d"
 
 [settings.npm]
 bun = true
