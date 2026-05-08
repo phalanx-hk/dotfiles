@@ -1,5 +1,5 @@
-model = "gpt-5.4"
-model_reasoning_effort = "medium"
+model = "gpt-5.5"
+model_reasoning_effort = "high"
 hide_agent_reasoning = true
 approval_policy = "on-request"
 sandbox_mode = "workspace-write"
@@ -17,6 +17,5 @@ notify = ["bash", "-lc", "afplay /System/Library/Sounds/Ping.aiff"]
 [profiles.readonly]
 approval_policy = "untrusted"
 sandbox_mode = "read-only"
-
 [features]
 goals = true
