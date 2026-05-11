@@ -13,6 +13,25 @@ while [[ "$dir" != "/" ]]; do
   dir=$(dirname "$dir")
 done
 
+function link_skill_dirs() {
+    local source_dir=$1
+    local target_dir=$2
+
+    mkdir -p "$target_dir"
+    for skill in "$source_dir"/*; do
+        [ -d "$skill" ] || continue
+
+        local target
+        target="$target_dir/$(basename "$skill")"
+        if [ -e "$target" ] && [ ! -L "$target" ]; then
+            echo "Refusing to overwrite non-symlink: $target" >&2
+            return 1
+        fi
+
+        ln -sfn "$skill" "$target"
+    done
+}
+
 #### make config dir ####
 readonly CONFIG_DIR="$HOME/.config/"
 mkdir -p "$CONFIG_DIR"
@@ -70,12 +89,24 @@ if [ ! -d "$MISE_CONFIG_DIR" ]; then
 fi
 ln -sf "$REPO_DIR"/config/mise/mise.toml ~/.config/mise/config.toml
 
+### agent skills ###
+readonly AGENT_SOURCE_DIR="$REPO_DIR/config/agent"
+readonly AGENT_CONFIG_DIR="$HOME/.agents"
+if [ ! -d "$AGENT_CONFIG_DIR" ]; then
+    mkdir -p "$AGENT_CONFIG_DIR"
+fi
+
+readonly AGENT_SKILLS_SOURCE_DIR="$REPO_DIR/config/agent/skills"
+readonly AGENTS_SKILLS_DIR="$HOME/.agents/skills"
+link_skill_dirs "$AGENT_SKILLS_SOURCE_DIR" "$AGENTS_SKILLS_DIR"
+
+
 ### claude code ###
 readonly CLAUDE_CODE_DIR="$HOME/.claude"
 if [ ! -d "$CLAUDE_CODE_DIR" ]; then
     mkdir -p "$CLAUDE_CODE_DIR"
 fi
-ln -sf "$REPO_DIR"/config/claude_code/CLAUDE.md "$CLAUDE_CODE_DIR"/CLAUDE.md
+ln -sf "$AGENT_SOURCE_DIR"/AGENTS.md "$CLAUDE_CODE_DIR"/CLAUDE.md
 ln -sf "$REPO_DIR"/config/claude_code/settings.json "$CLAUDE_CODE_DIR"/settings.json
 ln -sf "$REPO_DIR"/config/claude_code/statusline.py "$CLAUDE_CODE_DIR/statusline.py"
 ln -sf "$REPO_DIR"/config/claude_code/agents "$CLAUDE_CODE_DIR"
@@ -83,11 +114,7 @@ ln -sf "$REPO_DIR"/config/claude_code/commands "$CLAUDE_CODE_DIR"
 ln -sf "$REPO_DIR"/config/claude_code/rules "$CLAUDE_CODE_DIR"
 ln -sf "$REPO_DIR"/config/claude_code/hooks "$CLAUDE_CODE_DIR"
 
-mkdir -p "$CLAUDE_CODE_DIR/skills"
-for skill in "$REPO_DIR"/config/claude_code/skills/*; do
-    [ -e "$skill" ] || continue
-    ln -sfn "$skill" "$CLAUDE_CODE_DIR/skills/$(basename "$skill")"
-done
+link_skill_dirs "$AGENT_SKILLS_SOURCE_DIR" "$CLAUDE_CODE_DIR/skills"
 chmod +x "$CLAUDE_CODE_DIR"/statusline.py
 chmod +x "$CLAUDE_CODE_DIR"/hooks/cmux-notify.sh
 
@@ -98,7 +125,9 @@ if [ ! -d "$CODEX_DIR" ]; then
     mkdir -p "$CODEX_DIR"
 fi
 ln -sf "$REPO_DIR"/config/codex/config.toml "$CODEX_DIR"/config.toml
-ln -sf "$REPO_DIR"/config/codex/AGENTS.md "$CODEX_DIR"/AGENTS.md
+ln -sf "$AGENT_SOURCE_DIR"/AGENTS.md "$CODEX_DIR"/AGENTS.md
+mkdir -p "$CODEX_DIR"/rules
+ln -sf "$REPO_DIR"/config/codex/rules/default.rules "$CODEX_DIR"/rules/default.rules
 
 ### ghostty ###
 readonly GHOSTTY_CONFIG_DIR="$HOME/.config/ghostty"
