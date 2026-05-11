@@ -24,5 +24,12 @@ prefix_rule(pattern=["curl", "-s"], decision="allow")
 prefix_rule(pattern=["uv", "run"], decision="allow")
 prefix_rule(pattern=["git", "switch"], decision="allow")
 prefix_rule(pattern=["git", "restore", "--staged"], decision="allow")
-prefix_rule(pattern=["git", "add"], decision="allow")
+prefix_rule(pattern=["git", "add"], decision="allow", justification = "Allow staging changes without prompting",
+    match = [
+        "git add .",
+        "git add -A",
+        "git add --all",
+        "git add path/to/file",
+    ],
+)
 prefix_rule(pattern=["git", "commit"], decision="allow")
