@@ -3,6 +3,7 @@ model_reasoning_effort = "high"
 hide_agent_reasoning = true
 approval_policy = "on-request"
 sandbox_mode = "workspace-write"
+plan_mode_reasoning_effort = "high"
 
 [sandbox_workspace_write]
 network_access = false
@@ -14,8 +15,12 @@ status_line = ["model-with-reasoning", "current-dir", "context-usage", "five-hou
 # macOS only: plays a sound on task completion
 notify = ["bash", "-lc", "afplay /System/Library/Sounds/Ping.aiff"]
 
+[tui.model_availability_nux]
+"gpt-5.5" = 4
+
 [profiles.readonly]
 approval_policy = "untrusted"
 sandbox_mode = "read-only"
 [features]
 goals = true
+terminal_resize_reflow = true

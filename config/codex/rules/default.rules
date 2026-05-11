@@ -1,0 +1,35 @@
+# Forbidden: mirror of config/claude_code/settings.json permissions.deny
+
+prefix_rule(pattern=["rm"], decision="forbidden")
+prefix_rule(pattern=["rmdir"], decision="forbidden")
+prefix_rule(pattern=["chmod", "777"], decision="forbidden")
+prefix_rule(pattern=["chown", "root"], decision="forbidden")
+prefix_rule(pattern=["terraform", "destroy"], decision="forbidden")
+prefix_rule(pattern=["terraform", "apply"], decision="forbidden")
+prefix_rule(pattern=["gcloud"], decision="forbidden")
+prefix_rule(pattern=["gsutil"], decision="forbidden")
+prefix_rule(pattern=["bq"], decision="forbidden")
+prefix_rule(pattern=["kubectl", "apply"], decision="forbidden")
+prefix_rule(pattern=["kubectl", "delete"], decision="forbidden")
+prefix_rule(pattern=["git", "push", "--force"], decision="forbidden")
+prefix_rule(pattern=["git", "push", "origin", "main"], decision="forbidden")
+
+# Allow: preserved from existing ~/.codex/rules/default.rules
+
+prefix_rule(pattern=["agent-browser", "open"], decision="allow")
+prefix_rule(pattern=["agent-browser", "snapshot"], decision="allow")
+prefix_rule(pattern=["agent-browser", "get"], decision="allow")
+prefix_rule(pattern=["agent-browser", "click"], decision="allow")
+prefix_rule(pattern=["curl", "-s"], decision="allow")
+prefix_rule(pattern=["uv", "run"], decision="allow")
+prefix_rule(pattern=["git", "switch"], decision="allow")
+prefix_rule(pattern=["git", "restore", "--staged"], decision="allow")
+prefix_rule(pattern=["git", "add"], decision="allow", justification = "Allow staging changes without prompting",
+    match = [
+        "git add .",
+        "git add -A",
+        "git add --all",
+        "git add path/to/file",
+    ],
+)
+prefix_rule(pattern=["git", "commit"], decision="allow")

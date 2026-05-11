@@ -34,11 +34,11 @@
       "NotebookEdit",
       "NotebookRead"
     ],
+    "defaultMode": "auto",
     "additionalDirectories": [
       "~/Google Drive/マイドライブ/Obsidian Vault/",
       "~/.claude/"
-    ],
-    "defaultMode": "auto"
+    ]
   },
   "model": "opus",
   "hooks": {
@@ -87,9 +87,18 @@
     "command": "~/.claude/statusline.py"
   },
   "enabledPlugins": {
-    "frontend-design@claude-plugins-official": true
+    "frontend-design@claude-plugins-official": true,
+    "skill-creator@claude-plugins-official": true
   },
   "alwaysThinkingEnabled": true,
   "showClearContextOnPlanAccept": true,
-  "skipAutoPermissionPrompt": true
+  "skipAutoPermissionPrompt": true,
+  "extraKnownMarketplaces": {
+    "anthropic-agent-skills": {
+      "source": {
+        "source": "github",
+        "repo": "anthropics/skills"
+      }
+    }
+  }
 }

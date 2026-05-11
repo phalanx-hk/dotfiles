@@ -1,0 +1,207 @@
+{
+  "skill_name": "kaggle-ideation",
+  "description": "Kaggle コンペ参加期間中の実験投資判断スキル。序盤・中盤・終盤を 1 件ずつ、差が出やすい設定でテスト。",
+  "test_cases": [
+    {
+      "id": "early-qwk",
+      "phase": "early",
+      "prompt": "Kaggle で Quadratic Weighted Kappa を評価指標とする順序回帰のテーブルコンペに参加した。EDA は終わったがまだ 1 度も submit していない。残期間 4 週間、submission は 1 日 5 回まで。ローカル GPU は RTX 3090 が 1 枚。データは 100k 行、特徴量 80 個（数値主体、カテゴリ 5 個）、target は 0〜5 の整数 6 クラスで分布は中央 3〜4 が多い。次に何から始めるべきか整理してほしい。",
+      "expected_phase_handling": "未着手として扱う。既試行は聞かない。",
+      "assertions": [
+        {
+          "type": "section_exists",
+          "name": "コンペ概要",
+          "rationale": "Phase 4 出力テンプレの必須節"
+        },
+        {
+          "type": "section_exists",
+          "name": "仮説バックログ",
+          "rationale": "10〜20 件の仮説表"
+        },
+        {
+          "type": "section_exists",
+          "name": "Recommended queue",
+          "rationale": "序盤 5〜7 件"
+        },
+        {
+          "type": "section_exists",
+          "name": "やらない仮説",
+          "rationale": "drop 仮説と理由 1 行"
+        },
+        {
+          "type": "section_exists",
+          "name": "不明点",
+          "rationale": "最低 1 件、空欄禁止"
+        },
+        {
+          "type": "hypothesis_count_range",
+          "min": 10,
+          "max": 20,
+          "rationale": "発散数 10〜20"
+        },
+        {
+          "type": "each_hypothesis_has",
+          "fields": ["Impact", "Cost", "time-to-signal", "submission risk", "弱点"],
+          "min_weaknesses": 2,
+          "rationale": "6 視点と弱点 2 つ以上"
+        },
+        {
+          "type": "recommended_queue_count_range",
+          "min": 5,
+          "max": 7,
+          "rationale": "序盤フェーズ別件数指針"
+        },
+        {
+          "type": "no_unrcritical_phrases",
+          "phrases": ["素晴らしい", "完璧", "画期的", "最高", "革新的", "圧倒的"],
+          "rationale": "無批判表現禁止"
+        },
+        {
+          "type": "no_hpo_in_top_queue",
+          "rationale": "HPO は対象外、Recommended queue 上位に置かない"
+        },
+        {
+          "type": "mentions_metric_alignment",
+          "keywords": ["threshold tuning", "ordinal", "QWK", "閾値", "metric-aware"],
+          "rationale": "QWK 特殊指標で metric-alignment への言及必須"
+        },
+        {
+          "type": "phase_handling_no_existing_trials",
+          "rationale": "未着手フェーズなので既試行を聞かない"
+        },
+        {
+          "type": "speculative_hypothesis_has_observation_basis",
+          "rationale": "仮説的（前例なし）根拠の仮説には観察由来＋成功条件＋最小検証＋失敗時の学びが併記される"
+        }
+      ]
+    },
+    {
+      "id": "mid-leak-suspicion",
+      "phase": "mid",
+      "prompt": "Kaggle の画像分類コンペで、discussion に target leak 疑いの投稿があった。public LB と CV が 0.05 乖離していて CV-LB 信頼度は大乖離。LightGBM 系メタ特徴 + EfficientNet-B3（5-fold StratifiedKFold）のアンサンブルを 1 度 submit 済み。残 10 日、submission は 1 日 5 回まで残数余裕あり。ローカル GPU は RTX 4090 × 1。次の実験を整理してほしい。",
+      "expected_phase_handling": "中盤・反復実験中として扱う。既試行と現状最高解構成を聞く。",
+      "assertions": [
+        {
+          "type": "section_exists",
+          "name": "Recommended queue",
+          "rationale": "中盤 3〜5 件"
+        },
+        {
+          "type": "section_exists",
+          "name": "やらない仮説",
+          "rationale": "drop 仮説と理由"
+        },
+        {
+          "type": "section_exists",
+          "name": "不明点",
+          "rationale": "最低 1 件"
+        },
+        {
+          "type": "hypothesis_count_range",
+          "min": 10,
+          "max": 20
+        },
+        {
+          "type": "each_hypothesis_has",
+          "fields": ["Impact", "Cost", "time-to-signal", "submission risk", "弱点"],
+          "min_weaknesses": 2
+        },
+        {
+          "type": "recommended_queue_count_range",
+          "min": 3,
+          "max": 5,
+          "rationale": "中盤フェーズ別件数指針"
+        },
+        {
+          "type": "no_unrcritical_phrases",
+          "phrases": ["素晴らしい", "完璧", "画期的", "最高", "革新的", "圧倒的"]
+        },
+        {
+          "type": "mentions_adversarial_or_gap",
+          "keywords": ["adversarial validation", "Adversarial Validation", "public-private gap", "分布乖離", "distribution shift"],
+          "rationale": "leak 疑い・CV-LB 大乖離なので adversarial validation または public-private gap への言及必須"
+        },
+        {
+          "type": "leak_handled_as_detection_isolation",
+          "rationale": "leak の検証・隔離・public/private risk を扱う。leak 利用を煽らない"
+        },
+        {
+          "type": "no_leak_exploitation_in_top_queue",
+          "rationale": "LB only に効く加工を Recommended queue 上位に置かない"
+        },
+        {
+          "type": "no_hpo_in_top_queue"
+        }
+      ]
+    },
+    {
+      "id": "late-final-48h",
+      "phase": "late",
+      "prompt": "Kaggle NLP コンペ残 48 時間、submission 残 12 回（1 日 5 回上限）。BERT-base × 5 fold アンサンブルで Public LB 0.91、CV 0.90 で整合。ローカル GPU は RTX 4090 × 1。次の 24 時間でやるべきこと／やらないことを整理してほしい。",
+      "expected_phase_handling": "終盤として扱う。重い新規学習・大規模 NN 構造変更を Recommended queue 上位に置かない。submission 残数を意思決定に使う。",
+      "assertions": [
+        {
+          "type": "section_exists",
+          "name": "Recommended queue",
+          "rationale": "終盤 1〜3 件"
+        },
+        {
+          "type": "section_exists",
+          "name": "やらない仮説",
+          "rationale": "drop 仮説と理由"
+        },
+        {
+          "type": "section_exists",
+          "name": "不明点",
+          "rationale": "最低 1 件"
+        },
+        {
+          "type": "hypothesis_count_range",
+          "min": 10,
+          "max": 20
+        },
+        {
+          "type": "each_hypothesis_has",
+          "fields": ["Impact", "Cost", "time-to-signal", "submission risk", "弱点"],
+          "min_weaknesses": 2
+        },
+        {
+          "type": "recommended_queue_count_range",
+          "min": 1,
+          "max": 3,
+          "rationale": "終盤フェーズ別件数指針"
+        },
+        {
+          "type": "no_unrcritical_phrases",
+          "phrases": ["素晴らしい", "完璧", "画期的", "最高", "革新的", "圧倒的"]
+        },
+        {
+          "type": "no_heavy_training_in_top_queue",
+          "keywords": ["新規事前学習", "大規模 NN", "ConvNeXt-Large", "ViT-L", "学習レシピの大幅変更", "新規学習"],
+          "rationale": "終盤は重い新規学習・大規模 NN 構造変更を Recommended queue 上位に置かない"
+        },
+        {
+          "type": "uses_submission_count_in_decision",
+          "rationale": "submission 残数（12 回）を意思決定の根拠に使う"
+        },
+        {
+          "type": "top_queue_contains_late_stage_actions",
+          "keywords": ["ensemble weight", "blend weight", "calibration", "seed", "fold 選別", "提出 sanity check", "threshold tuning", "final 2", "backup submission"],
+          "rationale": "終盤らしい後処理・選別・提出戦略が上位に来る"
+        },
+        {
+          "type": "no_hpo_in_top_queue"
+        }
+      ]
+    }
+  ],
+  "comparison_configs": ["with-skill", "no-skill"],
+  "iteration_workspace": "~/.claude/skills/kaggle-ideation-workspace/iteration-N/",
+  "notes": [
+    "iteration 1: 3 件 × 2 構成 = 6 並列 subagent タスク",
+    "各タスク notification から total_tokens / duration_ms を timing.json に保存",
+    "grader subagent でアサーション判定 → grading.json",
+    "scripts.aggregate_benchmark で集計、eval-viewer で結果ビュー",
+    "iteration 2 以降で差が出にくければ「時系列 group leak」「recsys MAP@K」のテストケース追加検討"
+  ]
+}
